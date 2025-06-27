@@ -5,7 +5,6 @@ import FeaturesStickyLayout from "@/partials/FeaturesStickyLayout";
 import HomeBanner from "@/partials/HomeBanner";
 import IntegrationSection from "@/partials/IntegrationSection";
 import SeoMeta from "@/partials/SeoMeta";
-import Testimonial from "@/partials/Testimonial";
 
 const Home = () => {
   return (
@@ -16,7 +15,6 @@ const Home = () => {
       <FeaturesStickyLayout />
       <FeaturesCardLayout />
       <IntegrationSection />
-      {/* <Testimonial featuredCustomer="David Miller" /> */}
       <CallToAction1 />
     </>
   );
