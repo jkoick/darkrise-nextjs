@@ -1,16 +1,12 @@
-import { getListPage } from "@/lib/contentParser";
+import { changelogContent, featuresPageMetadata } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction2 from "@/partials/CallToAction2";
 import SeoMeta from "@/partials/SeoMeta";
-import { Changelog, RegularPage } from "@/types";
 
 const ChangelogPage = () => {
-  const featureIndex: RegularPage["frontmatter"] =
-    getListPage("feature/_index.md").frontmatter;
+  const featureIndex = featuresPageMetadata;
 
-  const { title, description, list }: Changelog["frontmatter"] = getListPage(
-    "sections/changelog.md",
-  ).frontmatter;
+  const { title, description, list } = changelogContent;
 
   return (
     <>

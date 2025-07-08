@@ -1,9 +1,13 @@
 import ImageFallback from "@/helpers/ImageFallback";
-import { customersLogoContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
+import { CustomersLogoData } from "@/data/content";
 
-const CustomersLogo = () => {
-  const { title, logos } = customersLogoContent;
+interface CustomersLogoProps {
+  data: CustomersLogoData;
+}
+
+const CustomersLogo = ({ data }: CustomersLogoProps) => {
+  const { title, logos } = data;
 
   return (
     <section className="section">
@@ -55,8 +59,6 @@ const CustomersLogo = () => {
             </div>
           </div>
         </div>
-        {/* Overlay */}
-        <div className="" />
       </div>
     </section>
   );

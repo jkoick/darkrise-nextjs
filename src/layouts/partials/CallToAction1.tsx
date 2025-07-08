@@ -1,12 +1,13 @@
 import AnimatedAnchor from "@/components/AnimatedAnchor";
 import ImageFallback from "@/helpers/ImageFallback";
-import { getListPage } from "@/lib/contentParser";
+import { callToAction1Content } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const CallToAction1 = () => {
-  const { enable, title, description, button, image, bg_image } = getListPage(
-    "sections/call-to-action-1.md",
-  ).frontmatter;
+  const { title, description, buttons, image } = callToAction1Content;
+  const enable = true;
+  const button = buttons[0];
+  const bg_image = "/images/call-to-action/bg-pattern.png";
 
   return (
     <>
@@ -49,8 +50,8 @@ const CallToAction1 = () => {
                   >
                     <ImageFallback
                       className="-mb-px h-[450px] w-full rounded-t-xl border border-border bg-body object-cover object-left-top lg:ml-28 lg:rounded-3xl lg:rounded-b-none"
-                      src={image}
-                      alt="sales report"
+                      src={image.src}
+                      alt={image.alt}
                       width={1000}
                       height={1000}
                     />

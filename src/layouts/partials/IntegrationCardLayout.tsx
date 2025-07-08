@@ -1,13 +1,19 @@
 import AnimatedAnchor from "@/components/AnimatedAnchor";
 import ImageFallback from "@/helpers/ImageFallback";
-import { getListPage, getSinglePage } from "@/lib/contentParser";
+import { integrationContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const IntegrationCardLayout = () => {
-  const { title, description } = getListPage(
-    "sections/integration.md",
-  ).frontmatter;
-  const list = getSinglePage("integration");
+  const { title, description, integrations } = integrationContent;
+  const list = integrations.map((item, index) => ({
+    slug: item.name.toLowerCase().replace(/\s+/g, '-'),
+    frontmatter: {
+      title: item.name,
+      description: item.description,
+      image: item.icon,
+      type: item.category
+    }
+  }));
 
   return (
     <section className="section">

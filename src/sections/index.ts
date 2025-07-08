@@ -1,0 +1,11 @@
+export { default as HomeBanner } from './HomeBanner';
+export { default as Features } from './Features';
+export { default as FeaturesStickyLayout } from './FeaturesStickyLayout';
+export { default as CustomersLogo } from './CustomersLogo';
+export { default as CallToAction } from './CallToAction';
+export { default as Integration } from './Integration';
+export { default as FeaturesCardLayout } from './FeaturesCardLayout';
+export { default as ContactHero } from './ContactHero';
+export { default as Values } from './Values';
+export { default as Team } from './Team';
+export { default as Hero } from './Hero';

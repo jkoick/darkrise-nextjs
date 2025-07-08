@@ -1,7 +1,9 @@
-import AnimatedAnchor from "@/components/AnimatedAnchor";
-import IntegrationCard from "@/components/IntegrationCard";
-import { integrationContent } from "@/data/content";
+"use client";
+
+import AnimatedAnchor from "@/layouts/components/AnimatedAnchor";
+import IntegrationCard from "@/layouts/components/IntegrationCard";
 import { markdownify } from "@/lib/utils/textConverter";
+import { IntegrationData } from "@/data/content";
 
 const FE_STACK = [
   "CSS",
@@ -10,40 +12,50 @@ const FE_STACK = [
   "TypeScript",
   "React",
   "Next.js",
-  "Vue",
+  "Vue.js",
   "Nuxt",
   "Tailwind CSS",
   "Vite",
 ];
 
-type IntegrationSectionProps = {
+interface IntegrationProps {
+  data: IntegrationData;
   largeHeading?: boolean;
   hideBackground?: boolean;
   fluidContainer?: boolean;
   hideHeadingOverlay?: boolean;
   hideCTAButton?: boolean;
-};
+  button?: {
+    enable: boolean;
+    label: string;
+    link: string;
+  };
+}
 
-const IntegrationSection = ({
+const Integration = ({
+  data,
   largeHeading,
   hideBackground,
   fluidContainer,
   hideHeadingOverlay,
   hideCTAButton,
-}: IntegrationSectionProps) => {
-  const { title, description, integrations } = integrationContent;
+  button,
+}: IntegrationProps) => {
+  const { title, description, integrations } = data;
 
-  const button = {
-    enable: true,
-    label: "View All Integrations",
-    link: "/integrations"
-  };
+  // Convert integrations to the format expected by IntegrationCard
+  const list = integrations.map(item => ({
+    frontmatter: {
+      title: item.name,
+      image: item.icon
+    }
+  }));
 
-  const firstListRaw = integrations.filter((p) =>
-    FE_STACK.includes(p.name),
+  const firstListRaw = list.filter((p) =>
+    FE_STACK.includes(p.frontmatter.title),
   );
-  const secondListRaw = integrations.filter(
-    (p) => !FE_STACK.includes(p.name),
+  const secondListRaw = list.filter(
+    (p) => !FE_STACK.includes(p.frontmatter.title),
   );
 
   const firstList = [...firstListRaw, ...firstListRaw];
@@ -102,9 +114,9 @@ const IntegrationSection = ({
                   <div className="marquee marquee-duration-60 flex shrink-0 items-center justify-center gap-5">
                     {firstList.map((item, index) => (
                       <IntegrationCard
-                        key={`${item.name}-${index}`}
-                        image={item.icon}
-                        name={item.name}
+                        key={`${item.frontmatter.title}-${index}`}
+                        image={item.frontmatter.image}
+                        name={item.frontmatter.title}
                       />
                     ))}
                   </div>
@@ -114,9 +126,9 @@ const IntegrationSection = ({
                   >
                     {firstList.map((item, index) => (
                       <IntegrationCard
-                        key={`${item.name}-${index}`}
-                        image={item.icon}
-                        name={item.name}
+                        key={`${item.frontmatter.title}-${index}`}
+                        image={item.frontmatter.image}
+                        name={item.frontmatter.title}
                       />
                     ))}
                   </div>
@@ -124,12 +136,12 @@ const IntegrationSection = ({
                 <div className="marquee-wrapper mt-5 flex gap-5 overflow-hidden">
                   <div className="marquee marquee-duration-60 marquee-reverse flex shrink-0 items-center justify-center gap-5">
                     {secondList.map(
-                      (item, i: number) => (
+                      ({ frontmatter: { title, image } }, i: number) => (
                         <IntegrationCard
-                          key={`${item.name}-${i}`}
+                          key={`${title}-${i}`}
                           style={`${fluidContainer ? "rounded-xl" : "rounded-t-xl"}`}
-                          image={item.icon}
-                          name={item.name}
+                          image={image}
+                          name={title}
                         />
                       ),
                     )}
@@ -139,12 +151,12 @@ const IntegrationSection = ({
                     aria-hidden="true"
                   >
                     {secondList.map(
-                      (item, i: number) => (
+                      ({ frontmatter: { title, image } }, i: number) => (
                         <IntegrationCard
-                          key={`${item.name}-${i}`}
+                          key={`${title}-${i}`}
                           style={`${fluidContainer ? "rounded-xl" : "rounded-t-xl"}`}
-                          image={item.icon}
-                          name={item.name}
+                          image={image}
+                          name={title}
                         />
                       ),
                     )}
@@ -202,11 +214,11 @@ const IntegrationSection = ({
                 <div className="marquee-wrapper flex gap-5 overflow-hidden">
                   <div className="marquee marquee-duration-60 flex shrink-0 items-center justify-center gap-5">
                     {firstList.map(
-                      (item, i: number) => (
+                      ({ frontmatter: { title, image } }, i: number) => (
                         <IntegrationCard
-                          key={`${item.name}-${i}`}
-                          image={item.icon}
-                          name={item.name}
+                          key={`${title}-${i}`}
+                          image={image}
+                          name={title}
                         />
                       ),
                     )}
@@ -229,12 +241,12 @@ const IntegrationSection = ({
                 <div className="marquee-wrapper mt-5 flex gap-5 overflow-hidden">
                   <div className="marquee marquee-duration-60 marquee-reverse flex shrink-0 items-center justify-center gap-5">
                     {secondList.map(
-                      (item, i: number) => (
+                      ({ frontmatter: { title, image } }, i: number) => (
                         <IntegrationCard
-                          key={`${item.name}-${i}`}
+                          key={`${title}-${i}`}
                           style={`${fluidContainer ? "rounded-xl" : "rounded-t-xl"}`}
-                          image={item.icon}
-                          name={item.name}
+                          image={image}
+                          name={title}
                         />
                       ),
                     )}
@@ -244,12 +256,12 @@ const IntegrationSection = ({
                     aria-hidden="true"
                   >
                     {secondList.map(
-                      (item, i: number) => (
+                      ({ frontmatter: { title, image } }, i: number) => (
                         <IntegrationCard
-                          key={`${item.name}-${i}`}
+                          key={`${title}-${i}`}
                           style={`${fluidContainer ? "rounded-xl" : "rounded-t-xl"}`}
-                          image={item.icon}
-                          name={item.name}
+                          image={image}
+                          name={title}
                         />
                       ),
                     )}
@@ -264,4 +276,4 @@ const IntegrationSection = ({
   );
 };
 
-export default IntegrationSection;
+export default Integration;

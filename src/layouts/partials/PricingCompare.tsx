@@ -1,13 +1,11 @@
 import AnimatedAnchor from "@/components/AnimatedAnchor";
 import ImageFallback from "@/helpers/ImageFallback";
-import { getListPage } from "@/lib/contentParser";
+import { pricingCompareContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
-import { PriceCompare } from "@/types";
 import React from "react";
 
 const PricingCompare = ({ largeHeading }: { largeHeading?: boolean }) => {
-  let { title, plans, plans_features }: PriceCompare["frontmatter"] =
-    getListPage("sections/pricing-compare.md").frontmatter;
+  let { title, plans, plans_features } = pricingCompareContent;
   return (
     <section className="section">
       <div className="container">

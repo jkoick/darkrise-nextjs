@@ -1,18 +1,13 @@
 import ImageFallback from "@/helpers/ImageFallback";
-import { featuresCardLayoutContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
+import { FeatureCardData } from "@/data/content";
 
-const FeaturesCardLayout = ({
-  features,
-}: {
-  features?: any;
-}) => {
-  let { title, description, features: list } = featuresCardLayoutContent;
+interface FeaturesCardLayoutProps {
+  data: FeatureCardData;
+}
 
-  // Override title & description if features is passed in
-  if (features) {
-    ({ title, description } = features);
-  }
+const FeaturesCardLayout = ({ data }: FeaturesCardLayoutProps) => {
+  const { title, description, features } = data;
 
   return (
     <section className="section">
@@ -34,7 +29,7 @@ const FeaturesCardLayout = ({
           </div>
           <div className="col-12 pt-20">
             <div className="row g-4 justify-center">
-              {list?.map((item, index: number) => (
+              {features?.map((item, index: number) => (
                 <div
                   key={index}
                   className="md:col-6 lg:col-4"

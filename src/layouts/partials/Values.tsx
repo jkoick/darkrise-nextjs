@@ -1,10 +1,9 @@
 import ImageFallback from "@/helpers/ImageFallback";
-import { getListPage } from "@/lib/contentParser";
+import { valuesContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const Values = () => {
-  const { title, description, list } =
-    getListPage("sections/values.md").frontmatter;
+  const { title, description, values } = valuesContent;
 
   return (
     <section className="section">
@@ -26,7 +25,7 @@ const Values = () => {
           </div>
           <div className="col-12 pt-20">
             <div className="row g-4 justify-center">
-              {list?.map(
+              {values?.map(
                 (
                   item: { icon: string; title: string; description: string },
                   index: number,

@@ -1,23 +1,23 @@
-import { getListPage } from "@/lib/contentParser";
-import AboutBanner from "@/partials/AboutBanner";
-import CallToAction1 from "@/partials/CallToAction1";
-import CareerCta from "@/partials/CareerCta";
-import OurTeam from "@/partials/OurTeam";
+import { HomeBanner, Values, Team, CallToAction } from "@/sections";
 import SeoMeta from "@/partials/SeoMeta";
-import Values from "@/partials/Values";
-import { RegularPage } from "@/types";
+import {
+  aboutPageMetadata,
+  aboutBannerContent,
+  valuesContent,
+  teamContent,
+  careerCtaContent,
+  callToAction1Content
+} from "@/data/content";
 
 const About = () => {
-  const data: RegularPage = getListPage("about/_index.md");
-
   return (
     <>
-      <SeoMeta {...data.frontmatter} />
-      <AboutBanner />
-      <Values />
-      <OurTeam />
-      <CareerCta />
-      <CallToAction1 />
+      <SeoMeta {...aboutPageMetadata} />
+      <HomeBanner data={aboutBannerContent} />
+      <Values data={valuesContent} />
+      <Team data={teamContent} />
+      <CallToAction data={careerCtaContent} variant="centered" />
+      <CallToAction data={callToAction1Content} variant="default" />
     </>
   );
 };

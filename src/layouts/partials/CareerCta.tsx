@@ -1,11 +1,10 @@
 import AnimatedAnchor from "@/components/AnimatedAnchor";
-import { getListPage } from "@/lib/contentParser";
+import { careerCtaContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const CareerCta = () => {
-  const { title, description, button } = getListPage(
-    "sections/career-cta.md",
-  ).frontmatter;
+  const { title, description, buttons } = careerCtaContent;
+  const button = buttons[0];
 
   return (
     <section className="section">

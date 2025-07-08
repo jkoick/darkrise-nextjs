@@ -1,17 +1,21 @@
+import { Hero, FeaturesCardLayout, Features as FeaturesSection, CallToAction } from "@/sections";
 import FeaturedTestimonial from "@/components/FeaturedTestimonial";
-import { getListPage } from "@/lib/contentParser";
-import CallToAction2 from "@/partials/CallToAction2";
-import FeaturesGrid from "@/partials/FeaturesGrid";
-import FeaturesStickyLayout from "@/partials/FeaturesStickyLayout";
 import SeoMeta from "@/partials/SeoMeta";
+import {
+  featuresPageMetadata,
+  featuresHeroContent,
+  featuresCardLayoutContent,
+  featuresContent,
+  callToAction1Content
+} from "@/data/content";
 
-const page = () => {
-  const featureIndex = getListPage("feature/_index.md");
+const FeaturesPage = () => {
   return (
     <>
-      <SeoMeta {...featureIndex.frontmatter} />
-      <FeaturesGrid largeHeading />
-      <FeaturesStickyLayout sticky={false} />
+      <SeoMeta {...featuresPageMetadata} />
+      <Hero data={featuresHeroContent} />
+      <FeaturesCardLayout data={featuresCardLayoutContent} />
+      <FeaturesSection data={featuresContent} />
       <section className="section pt-0">
         <div className="container">
           <FeaturedTestimonial
@@ -20,9 +24,9 @@ const page = () => {
           />
         </div>
       </section>
-      <CallToAction2 />
+      <CallToAction data={callToAction1Content} variant="centered" />
     </>
   );
 };
 
-export default page;
+export default FeaturesPage;

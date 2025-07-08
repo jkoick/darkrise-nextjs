@@ -1,9 +1,8 @@
 import AnimatedAnchor from "@/components/AnimatedAnchor";
 import AnimatedTestimonialList from "@/components/AnimatedTestimonialList";
 import FeaturedTestimonial from "@/components/FeaturedTestimonial";
-import { getListPage } from "@/lib/contentParser";
+import { testimonialContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
-import { type Testimonial } from "@/types";
 
 const Testimonial = ({
   featuredCustomer,
@@ -12,8 +11,15 @@ const Testimonial = ({
   featuredCustomer: string;
   hideCTAButton?: boolean;
 }) => {
-  let { title, subtitle, button, list }: Testimonial["frontmatter"] =
-    getListPage("sections/testimonial.md").frontmatter;
+  let { title, description, testimonials } = testimonialContent;
+  let list = testimonials;
+  
+  const subtitle = "What Our Clients Say";
+  const button = {
+    enable: true,
+    label: "View All Testimonials",
+    link: "/testimonials"
+  };
 
   // Exclude featured item from list
   list = list.filter((item) => !item.featured);

@@ -1,7 +1,6 @@
 import ImageFallback from "@/helpers/ImageFallback";
-import { getListPage } from "@/lib/contentParser";
+import { testimonialContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
-import { Testimonial } from "@/types";
 
 const FeaturedTestimonial = ({
   featuredCustomer,
@@ -12,9 +11,7 @@ const FeaturedTestimonial = ({
 }) => {
   let featuredTestimonial;
 
-  let list: Testimonial["frontmatter"]["list"] = getListPage(
-    "sections/testimonial.md",
-  ).frontmatter.list;
+  let list = testimonialContent.testimonials;
 
   // If featured customer name is passed then count that customer as featured
   if (featuredCustomer) {

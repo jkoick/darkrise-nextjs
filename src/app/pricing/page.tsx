@@ -6,6 +6,7 @@ import PricingSection from "@/partials/PricingSection";
 import SeoMeta from "@/partials/SeoMeta";
 import Testimonial from "@/partials/Testimonial";
 import { RegularPage } from "@/types";
+import { pricingContent } from "@/data/content";
 
 const pricing = () => {
   const {
@@ -16,8 +17,6 @@ const pricing = () => {
     features,
   }: RegularPage["frontmatter"] = getListPage("pricing/_index.md").frontmatter;
 
-  const pricingSectionData = getListPage("sections/pricing.md").frontmatter;
-
   return (
     <>
       <SeoMeta
@@ -26,7 +25,7 @@ const pricing = () => {
         description={description}
         image={image}
       />
-      <PricingSection data={pricingSectionData} largeHeading />
+      <PricingSection data={pricingContent} largeHeading />
       <FeaturesCardLayout features={features} />
       <PricingCompare />
       <Testimonial featuredCustomer="David Miller" hideCTAButton />

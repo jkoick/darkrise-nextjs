@@ -1,13 +1,10 @@
 import TeamCard from "@/components/TeamCard";
-import { getListPage } from "@/lib/contentParser";
+import { teamContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
-import { Team } from "@/types";
 import React from "react";
 
 const OurTeam = () => {
-  const { title, description, list } = getListPage(
-    "sections/our-team.md",
-  ).frontmatter;
+  const { title, description, members } = teamContent;
   return (
     <section className="section">
       <div className="container">
@@ -32,7 +29,7 @@ const OurTeam = () => {
             data-aos-delay="200"
           >
             <div className="row gx-4 gy-5">
-              {list?.map((item: Team, i: number) => (
+              {members?.map((item, i: number) => (
                 <div className="lg:col-4" key={i}>
                   <TeamCard data={item} />
                 </div>

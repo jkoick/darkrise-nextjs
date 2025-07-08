@@ -1,11 +1,9 @@
 import ImageFallback from "@/helpers/ImageFallback";
-import { getListPage } from "@/lib/contentParser";
+import { aboutBannerContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const AboutBanner = () => {
-  const { title, description, image } = getListPage(
-    "sections/about-banner.md",
-  ).frontmatter;
+  const { title, description, image } = aboutBannerContent;
 
   return (
     <section className="section">
@@ -39,8 +37,8 @@ const AboutBanner = () => {
             {image && (
               <ImageFallback
                 className="h-[300px] min-h-full w-full rounded-lg object-cover md:h-[700px] md:rounded-3xl"
-                src={image}
-                alt={`image related to ${title || ""}`}
+                src={image.src}
+                alt={image.alt}
                 width={700}
                 height={300}
               />

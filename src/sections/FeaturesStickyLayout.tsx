@@ -1,16 +1,19 @@
-import AnimatedAnchor from "@/components/AnimatedAnchor";
+import AnimatedAnchor from "@/layouts/components/AnimatedAnchor";
 import DynamicIcon from "@/helpers/DynamicIcon";
 import ImageFallback from "@/helpers/ImageFallback";
-import { featuresContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
+import { FeatureItem } from "@/data/content";
 
-const FeaturesStickyLayout = ({ sticky = true }: { sticky?: boolean }) => {
-  const features = featuresContent;
+interface FeaturesStickyLayoutProps {
+  data: FeatureItem[];
+  sticky?: boolean;
+}
 
+const FeaturesStickyLayout = ({ data, sticky = true }: FeaturesStickyLayoutProps) => {
   return (
     <section className="section">
       <div className="container">
-        {features?.map((item, mindex: number) => {
+        {data?.map((item: FeatureItem, mindex: number) => {
           const { title, description, list, images, button } = item;
 
           return (
@@ -38,7 +41,7 @@ const FeaturesStickyLayout = ({ sticky = true }: { sticky?: boolean }) => {
                     )}
                     {list && (
                       <ul className="mt-10 columns-1 md:columns-2 lg:mt-20">
-                        {list.map((item, i: number) => (
+                        {list.map((listItem, i: number) => (
                           <li
                             className="mb-3 text-lg/[inherit] font-medium"
                             key={i}
@@ -47,7 +50,7 @@ const FeaturesStickyLayout = ({ sticky = true }: { sticky?: boolean }) => {
                               icon="FaCheck"
                               className="text-yellow-200 -mt-px inline-block mr-2.5 text-base"
                             />
-                            <span dangerouslySetInnerHTML={markdownify(item)} />
+                            <span dangerouslySetInnerHTML={markdownify(listItem)} />
                           </li>
                         ))}
                       </ul>
@@ -69,7 +72,7 @@ const FeaturesStickyLayout = ({ sticky = true }: { sticky?: boolean }) => {
                         data-aos="fade-up-sm"
                         data-aos-delay="250"
                       >
-                        {images?.map((item, index: number) => {
+                        {images?.map((imageItem, index: number) => {
                           const getClass = (mindex: number, index: number) => {
                             switch (mindex) {
                               case 0:
@@ -91,7 +94,7 @@ const FeaturesStickyLayout = ({ sticky = true }: { sticky?: boolean }) => {
 
                           return (
                             <ImageFallback
-                              src={item}
+                              src={imageItem}
                               alt={title}
                               className={`relative z-10 ${getClass(mindex, index)}`}
                               key={index}

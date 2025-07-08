@@ -1,19 +1,19 @@
-import { getListPage } from "@/lib/contentParser";
-import CallToAction1 from "@/partials/CallToAction1";
+import { ContactHero, CallToAction } from "@/sections";
 import ContactFormSection from "@/partials/ContactFormSection";
-import ContactHero from "@/partials/ContactHero";
 import SeoMeta from "@/partials/SeoMeta";
-import { RegularPage } from "@/types";
+import {
+  contactPageMetadata,
+  contactHeroContent,
+  callToAction1Content
+} from "@/data/content";
 
-const Contact = async () => {
-  const data: RegularPage = getListPage("contact/_index.md");
-
+const Contact = () => {
   return (
     <>
-      <SeoMeta {...data.frontmatter} />
-      <ContactHero />
+      <SeoMeta {...contactPageMetadata} />
+      <ContactHero data={contactHeroContent} />
       <ContactFormSection />
-      <CallToAction1 />
+      <CallToAction data={callToAction1Content} variant="default" />
     </>
   );
 };

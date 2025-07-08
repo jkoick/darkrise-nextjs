@@ -1,12 +1,9 @@
 import ImageFallback from "@/helpers/ImageFallback";
-import { getListPage } from "@/lib/contentParser";
+import { featuresGridContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
-import { type FeaturesGrid } from "@/types";
 
 const FeaturesGrid = ({ largeHeading }: { largeHeading?: boolean }) => {
-  const { title, description, list }: FeaturesGrid["frontmatter"] = getListPage(
-    "sections/features-grid.md",
-  ).frontmatter;
+  const { title, description, list } = featuresGridContent;
 
   return (
     <section className="section">
