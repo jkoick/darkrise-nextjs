@@ -119,6 +119,10 @@
   @apply py-10 md:py-14;
 }
 
+.section-sm {
+  @apply py-8 md:py-10;
+}
+
 /* Container */
 .container {
   @apply mx-auto px-4 xl:!max-w-[1297px];
@@ -272,21 +276,22 @@
   @apply prose max-w-none;
   @apply prose-headings:mb-[.5em] prose-headings:mt-[1em] prose-headings:font-medium prose-headings:text-white prose-headings:![letter-spacing:unset];
   @apply prose-h1:text-h1-sm;
-  @apply prose-h2:text-h2-sm;
-  @apply prose-h3:text-h3-sm;
-  @apply prose-img:max-w-full prose-img:rounded-3xl;
-  @apply prose-hr:border-border;
-  @apply prose-p:text-text prose-p:opacity-70;
+  @apply prose-h2:text-h2-sm prose-h2:scroll-mt-20;
+  @apply prose-h3:text-h3-sm prose-h3:scroll-mt-20;
+  @apply prose-h4:scroll-mt-20;
+  @apply prose-img:max-w-full prose-img:rounded-3xl prose-img:shadow-lg;
+  @apply prose-hr:border-border prose-hr:my-12;
+  @apply prose-p:text-text prose-p:opacity-70 prose-p:leading-relaxed;
   @apply prose-blockquote:rounded-lg prose-blockquote:border prose-blockquote:border-l-[10px] prose-blockquote:border-primary prose-blockquote:bg-dark prose-blockquote:px-8 prose-blockquote:py-10 prose-blockquote:font-primary prose-blockquote:text-2xl prose-blockquote:not-italic prose-blockquote:text-dark;
-  @apply prose-pre:rounded-lg prose-pre:bg-dark;
-  @apply prose-code:px-1 prose-code:text-text;
-  @apply prose-strong:text-white;
-  @apply prose-a:text-text prose-a:underline hover:prose-a:text-white;
+  @apply prose-pre:rounded-lg prose-pre:bg-dark prose-pre:border prose-pre:border-border;
+  @apply prose-code:px-1 prose-code:text-text prose-code:bg-white/5 prose-code:rounded;
+  @apply prose-strong:text-white prose-strong:font-semibold;
+  @apply prose-a:text-primary prose-a:underline prose-a:underline-offset-4 hover:prose-a:text-white;
   @apply prose-li:!my-1 prose-li:text-text prose-li:opacity-70 marker:text-text;
   @apply prose-ol:pl-[1em];
   @apply prose-table:relative prose-table:overflow-hidden prose-table:rounded-lg prose-table:before:absolute prose-table:before:left-0 prose-table:before:top-0 prose-table:before:h-full prose-table:before:w-full prose-table:before:rounded-[inherit] prose-table:before:border-border prose-table:before:content-[""];
   @apply prose-thead:border-border prose-thead:bg-dark;
-  @apply prose-th:relative prose-th:z-10 prose-th:px-4 prose-th:py-[18px] prose-th:text-white;
+  @apply prose-th:relative prose-th:z-10 prose-th:px-4 prose-th:py-[18px] prose-th:text-white prose-th:font-semibold;
   @apply prose-tr:border-border prose-tr:text-text;
   @apply prose-td:relative prose-td:z-10 prose-td:px-3 prose-td:py-[18px];
 
@@ -296,4 +301,115 @@
   & > *:last-child {
     @apply mb-0;
   }
+}
+
+/* Enhanced prose styles for larger content */
+.content.prose-lg {
+  @apply text-lg leading-relaxed;
+
+  h2 {
+    @apply text-3xl font-bold mb-6 mt-12 first:mt-0;
+    background: linear-gradient(
+      135deg,
+      theme("colors.white") 0%,
+      theme("colors.gray.300") 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold mb-4 mt-8;
+  }
+
+  h4 {
+    @apply text-xl font-medium mb-3 mt-6;
+  }
+
+  p {
+    @apply mb-6 leading-8;
+  }
+
+  ul,
+  ol {
+    @apply mb-6 space-y-2;
+  }
+
+  li {
+    @apply leading-7;
+  }
+}
+
+/* Blog specific layout fixes */
+.blog-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .blog-layout {
+    grid-template-columns: 200px 1fr 160px;
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .blog-layout {
+    grid-template-columns: 250px 1fr 200px;
+    gap: 4rem;
+  }
+}
+
+/* Fix responsive grid columns */
+@media (max-width: 1023px) {
+  .lg\:col-3,
+  .lg\:col-7,
+  .lg\:col-2,
+  .xl\:col-6 {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+}
+
+/* Sticky positioning fixes */
+.sticky-sidebar {
+  position: sticky;
+  top: 6rem;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+}
+
+/* Newsletter section styling */
+.newsletter-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.1) 0%,
+    rgba(168, 85, 247, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+/* Enhanced input styling */
+.form-input {
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.form-input:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
 }

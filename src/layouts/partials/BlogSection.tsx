@@ -28,13 +28,12 @@ const BlogSection = ({
   // Get all blog posts from the specified folder if no posts are passed as props
   posts = posts ? posts : getSinglePage(BLOG_FOLDER);
 
-  // Fetch all blog posts from the specified folder
-  const featuredPost = posts.find((post) => post.frontmatter.featured === true);
-  const featuredExcludePosts = posts.filter(
-    (post) => post.frontmatter.featured !== true,
-  );
+  // Randomly select a featured post from all posts
+  const randomIndex = Math.floor(Math.random() * posts.length);
+  const featuredPost = posts[randomIndex];
+  const featuredExcludePosts = posts.filter((_, index) => index !== randomIndex);
 
-  // Sort blog posts by date in descending order
+  // Sort remaining blog posts by date in descending order
   let sortedPosts = sortByDate(featuredExcludePosts);
 
   return (

@@ -103,7 +103,7 @@ const Header = () => {
                         </svg>
                       </span>
                     </span>
-                    <div className="mega-menu-wrapper max-lg:hidden max-lg:group-[.active]:flex max-lg:group-[.active]:flex-col lg:invisible lg:absolute lg:left-0 lg:flex lg:opacity-0 lg:transition-all lg:duration-300 lg:group-hover:visible lg:group-hover:opacity-100">
+                    <div className="mega-menu-wrapper max-lg:hidden max-lg:group-[.active]:flex max-lg:group-[.active]:flex-col lg:invisible lg:absolute  lg:flex lg:opacity-0 lg:transition-all lg:duration-300 lg:group-hover:visible lg:group-hover:opacity-100">
                       {menu.children?.map((subchild, index) => (
                         <div
                           key={subchild.name}
@@ -174,7 +174,7 @@ const Header = () => {
                       </span>
                     </span>
                     <ul
-                      className={`nav-dropdown-list flex flex-col gap-1 rounded-xl border border-border bg-primary p-3 max-lg:mb-3 max-lg:hidden max-lg:w-[300px] max-lg:group-[.active]:flex max-lg:group-[.active]:flex-col lg:invisible lg:absolute lg:left-0 lg:flex lg:opacity-0 lg:transition-all lg:duration-300 lg:group-hover:visible lg:group-hover:opacity-100`}
+                      className={`nav-dropdown-list flex flex-col gap-1 rounded-xl border border-border bg-primary p-3 max-lg:mb-3 max-lg:hidden max-lg:w-[300px] max-lg:group-[.active]:flex max-lg:group-[.active]:flex-col lg:invisible lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:flex lg:opacity-0 lg:transition-all lg:duration-300 lg:group-hover:visible lg:group-hover:opacity-100`}
                     >
                       {menu.children?.map((child) => (
                         <li key={child.name} className={`nav-dropdown-item`}>

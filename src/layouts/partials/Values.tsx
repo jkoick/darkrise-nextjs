@@ -66,7 +66,7 @@ const Values = () => {
                       )}
                       {item.title && (
                         <h3
-                          className="tracking-none mb-4 text-xl/snug"
+                          className="mb-4 text-xl/snug"
                           dangerouslySetInnerHTML={markdownify(item.title)}
                         />
                       )}

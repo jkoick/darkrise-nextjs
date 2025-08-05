@@ -34,8 +34,8 @@
 
   "navigation_button": {
     "enable": true,
-    "label": "Get This Template",
-    "link": "https://themefisher.com/products/darkrise-nextjs"
+    "label": "Get in touch",
+    "link": "/contact/"
   },
 
   "google_tag_manager": {

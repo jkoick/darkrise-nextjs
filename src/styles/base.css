@@ -31,7 +31,7 @@ h6 {
   @apply font-primary font-medium;
 
   &:not(.tracking-none) {
-    @apply tracking-[-2.5px];
+    @apply tracking-[0px];
   }
 
   br {

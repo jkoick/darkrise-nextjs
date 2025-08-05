@@ -19,7 +19,7 @@ const TeamCard = ({ data }: { data: Team }) => {
       </div>
       {name && (
         <h3
-          className="tracking-none mt-4 text-base md:text-lg"
+          className="mt-4 text-base md:text-lg"
           dangerouslySetInnerHTML={markdownify(name)}
         />
       )}

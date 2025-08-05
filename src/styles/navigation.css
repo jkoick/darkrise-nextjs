@@ -52,7 +52,7 @@
   }
 
   .mega-menu-wrapper {
-    @apply top-0 flex-wrap gap-10 overflow-auto rounded-3xl border border-border bg-primary p-8 shadow max-lg:mb-4 lg:left-1/3 lg:top-full lg:flex  lg:translate-x-[20%] lg:flex-nowrap lg:gap-14 lg:border;
+    @apply top-0 flex-wrap gap-10 overflow-auto rounded-3xl border border-border bg-primary p-8 shadow max-lg:mb-4 lg:top-full lg:flex lg:flex-nowrap lg:gap-14 lg:border;
   }
   .nav-dropdown-list {
     @apply text-start;

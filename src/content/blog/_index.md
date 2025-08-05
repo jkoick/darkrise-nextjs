@@ -1,9 +1,9 @@
 ---
-title: "Blog Posts"
+title: "Products"
 meta_title: ""
-description: "As we move further into 2025, the landscape of cybersecurity continues to evolve, presenting new challenges and threats. Staying informed about these threats is essential for protecting your business and personal data."
+description: "Explore our innovative products designed to revolutionize warehouse operations with autonomous mobile robots, AI-powered optimization, and real-time inventory management."
 
 hero:
-  title: Our Blog
-  description: Gain invaluable predictive analytics and actionable insights, empowering your team to make data-driven decisions and close.
+  title: Our Products
+  description: Discover cutting-edge solutions that transform your warehouse operations with advanced technology and intelligent automation.
 ---
