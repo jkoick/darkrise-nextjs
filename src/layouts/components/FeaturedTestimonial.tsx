@@ -68,14 +68,6 @@ const FeaturedTestimonial = ({
                 <div
                   className={`min-h-full rounded-s-3xl ${!alternateLayout && "py-8 lg:pb-0 lg:pt-8"}`}
                 >
-                  {!alternateLayout && featuredTestimonial.title && (
-                    <h3
-                      className="tracking-none h5 mb-6 font-bold"
-                      dangerouslySetInnerHTML={markdownify(
-                        featuredTestimonial.title,
-                      )}
-                    />
-                  )}
                   {featuredTestimonial.content && (
                     <p
                       className={`${
@@ -111,27 +103,6 @@ const FeaturedTestimonial = ({
                   )}
                 </div>
 
-                {featuredTestimonial.list && (
-                  <ul className="mt-5 flex flex-col gap-x-10 gap-y-4 border-t border-border pt-5 md:flex-row md:pt-10 lg:mt-10">
-                    {featuredTestimonial.list.map((item, i: number) => (
-                      <li key={i}>
-                        <strong
-                          className="h2 has-gradient"
-                          dangerouslySetInnerHTML={markdownify(item.title)}
-                        />
-
-                        {item.description && (
-                          <p
-                            className="opacity-70"
-                            dangerouslySetInnerHTML={markdownify(
-                              item.description,
-                            )}
-                          />
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                )}
                 {!alternateLayout && (
                   <div
                     aria-hidden="true"

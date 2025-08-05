@@ -1,7 +1,5 @@
-import AuthorCard from "@/components/AuthorCard";
 import ReadingProgress from "@/components/ReadingProgress";
 import RelatedPosts from "@/components/RelatedPosts";
-import SocialShare from "@/components/SocialShare";
 import TableOfContents from "@/components/TableOfContents";
 import ImageFallback from "@/helpers/ImageFallback";
 import MDXContent from "@/helpers/MDXContent";

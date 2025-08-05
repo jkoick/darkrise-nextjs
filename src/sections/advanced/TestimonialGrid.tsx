@@ -82,7 +82,7 @@ const TestimonialGrid = ({
                 
                 <blockquote className="mb-6 text-center">
                   <p className="text-light italic">
-                    "{testimonial.quote}"
+                    &ldquo;{testimonial.quote}&rdquo;
                   </p>
                 </blockquote>
                 

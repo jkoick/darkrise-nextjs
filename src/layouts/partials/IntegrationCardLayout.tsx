@@ -5,7 +5,7 @@ import { markdownify } from "@/lib/utils/textConverter";
 
 const IntegrationCardLayout = () => {
   const { title, description, integrations } = integrationContent;
-  const list = integrations.map((item, index) => ({
+  const list = integrations.map((item) => ({
     slug: item.name.toLowerCase().replace(/\s+/g, '-'),
     frontmatter: {
       title: item.name,

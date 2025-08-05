@@ -216,11 +216,11 @@ const IntegrationSection = ({
                     aria-hidden="true"
                   >
                     {firstList.map(
-                      ({ frontmatter: { title, image } }, i: number) => (
+                      (item, i: number) => (
                         <IntegrationCard
-                          key={`${title}-${i}`}
-                          image={image}
-                          name={title}
+                          key={`${item.name}-${i}`}
+                          image={item.icon}
+                          name={item.name}
                         />
                       ),
                     )}

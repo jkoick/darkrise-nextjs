@@ -11,7 +11,7 @@ const Testimonial = ({
   featuredCustomer: string;
   hideCTAButton?: boolean;
 }) => {
-  let { title, description, testimonials } = testimonialContent;
+  let { title, testimonials } = testimonialContent;
   let list = testimonials;
   
   const subtitle = "What Our Clients Say";
