@@ -116,11 +116,11 @@
 
 /* section style */
 .section {
-  @apply py-10 md:py-14;
+  @apply py-6 sm:py-8 md:py-12 lg:py-14;
 }
 
 .section-sm {
-  @apply py-8 md:py-10;
+  @apply py-4 sm:py-6 md:py-8 lg:py-10;
 }
 
 /* Container */

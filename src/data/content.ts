@@ -71,6 +71,22 @@ export interface FeatureCardData {
   }>;
 }
 
+export interface BlogArticleItem {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  link: string;
+  featured?: boolean;
+  date: string;
+}
+
+export interface BlogCarouselData {
+  title: string;
+  subtitle: string;
+  articles: BlogArticleItem[];
+}
+
 // Content Data
 export const homeBannerContent: HomeBannerData = {
   note: "Awarded as the best startup in 2025",
@@ -90,7 +106,7 @@ export const homeBannerContent: HomeBannerData = {
     {
       enable: true,
       label: "View references",
-      link: "/contact/",
+      link: "/blog/",
     },
   ],
   list: [],
@@ -1043,5 +1059,41 @@ export const callToAction2Content: CallToAction2Data = {
     { icon: "/images/icons/svg/shield-check.svg" },
     { icon: "/images/icons/svg/collaboration.svg" },
     { icon: "/images/icons/svg/rocket.svg" },
+  ],
+};
+
+export const blogCarouselContent: BlogCarouselData = {
+  title: "**Featured Product** Insights",
+  subtitle:
+    "Explore in-depth articles about our revolutionary solutions and discover how they're transforming businesses across industries.",
+  articles: [
+    {
+      title: "iForms: Revolutionary Digital Form Management Platform",
+      description:
+        "Discover how iForms eliminates paper-based processes and streamlines organizational workflows with drag-and-drop form creation, advanced reporting, and seamless integration capabilities.",
+      image: "/images/blog/8.jpg",
+      tags: ["Digital Forms", "Workflow", "Enterprise"],
+      link: "/blog/post-8",
+      featured: true,
+      date: "Aug 5, 2024",
+    },
+    {
+      title: "SmartCut: AI-Powered Waste Management System",
+      description:
+        "Learn how SmartCut uses AI and computer vision to automatically measure, classify, and manage production waste, reducing material waste by 15-30 percent in manufacturing.",
+      image: "/images/blog/9.jpg",
+      tags: ["AI", "Manufacturing", "Sustainability"],
+      link: "/blog/post-9",
+      date: "Aug 4, 2025",
+    },
+    {
+      title: "Next-Generation Warehouse Management System",
+      description:
+        "Explore how innovative WMS technology revolutionizes warehouse operations with autonomous mobile robots, AI-powered optimization, and real-time inventory management.",
+      image: "/images/blog/10.jpg",
+      tags: ["WMS", "Robotics", "Automation"],
+      link: "/blog/post-10",
+      date: "Aug 5, 2024",
+    },
   ],
 };

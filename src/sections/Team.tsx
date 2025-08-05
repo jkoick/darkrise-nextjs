@@ -1,6 +1,6 @@
-import ImageFallback from "@/helpers/ImageFallback";
-import { markdownify } from "@/lib/utils/textConverter";
 import { TeamData } from "@/data/content";
+import { markdownify } from "@/lib/utils/textConverter";
+import ImageFallback from "@/helpers/ImageFallback";
 
 interface TeamProps {
   data: TeamData;
@@ -12,73 +12,76 @@ const Team = ({ data }: TeamProps) => {
   return (
     <section className="section">
       <div className="container">
-        <div className="row justify-center">
-          <div className="lg:col-8 text-center">
+        <div className="row">
+          <div
+            className="flex flex-col justify-center align-middle mx-auto w-full text-center"
+            data-aos="fade-up-sm"
+          >
             {title && (
               <h2
-                className="mb-4"
+                className="has-gradient mb-4"
                 dangerouslySetInnerHTML={markdownify(title)}
-                data-aos="fade-up-sm"
               />
             )}
             {description && (
               <p
-                className="mb-12 text-light"
+                className="text-lg/[inherit] opacity-80"
                 dangerouslySetInnerHTML={markdownify(description)}
-                data-aos="fade-up-sm"
-                data-aos-delay="100"
               />
             )}
           </div>
-        </div>
-
-        {members && members.length > 0 && (
-          <div className="row g-4 justify-center">
-            {members.map((member, index) => (
-              <div key={index} className="lg:col-3 md:col-6">
-                <div
-                  className="team-card text-center"
-                  data-aos="fade-up-sm"
-                  data-aos-delay={index * 100}
-                >
-                  <div className="mb-4">
-                    <ImageFallback
-                      src={member.image}
-                      alt={member.name}
-                      width={200}
-                      height={200}
-                      className="mx-auto rounded-full w-32 h-32 object-cover"
-                    />
-                  </div>
-                  <h3 className="mb-1 text-lg font-semibold">{member.name}</h3>
-                  <p className="mb-4 text-sm text-light opacity-70">{member.position}</p>
-                  
-                  {member.social && member.social.length > 0 && (
-                    <div className="flex justify-center gap-3">
-                      {member.social.map((social, socialIndex) => (
-                        <a
-                          key={socialIndex}
-                          href={social.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 hover:border-primary hover:bg-primary transition-all duration-300"
-                        >
-                          <ImageFallback
-                            src={social.icon}
-                            alt={social.platform}
-                            width={16}
-                            height={16}
-                            className="opacity-70 hover:opacity-100"
-                          />
-                        </a>
-                      ))}
+          <div
+            className="col-12 pt-20"
+            data-aos="fade-up-sm"
+            data-aos-delay="200"
+          >
+            <div className="row gx-4 gy-12 justify-center">
+              {members?.map((member, i: number) => (
+                <div className="sm:col-6 md:col-4 lg:col-3" key={i}>
+                  <div className="team-card text-center">
+                    <div className="mb-6">
+                      <div className="h-32 w-32 mx-auto overflow-hidden rounded-full">
+                        <ImageFallback
+                          src={member.image}
+                          alt={member.name}
+                          className="h-full w-full object-cover rounded-full"
+                          width={128}
+                          height={128}
+                        />
+                      </div>
                     </div>
-                  )}
+                    <h3 className="mt-6 text-xl font-semibold">
+                      {member.name}
+                    </h3>
+                    <p className="opacity-70 text-base">{member.position}</p>
+                    {member.social && (
+                      <ul className="mt-6 flex gap-3 justify-center">
+                        {member.social.map((social) => (
+                          <li key={social.platform}>
+                            <a
+                              href={social.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex h-12 w-12 items-center justify-center rounded-md bg-gradient-to-b from-white/10 to-slate-800/25 transition-all duration-300"
+                            >
+                              <ImageFallback
+                                src={social.icon}
+                                alt={social.platform}
+                                className="h-4 w-4 object-cover"
+                                width={16}
+                                height={16}
+                              />
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

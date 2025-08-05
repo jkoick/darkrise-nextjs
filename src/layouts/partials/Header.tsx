@@ -7,7 +7,7 @@ import menu from "@/config/menu.json";
 import ImageFallback from "@/helpers/ImageFallback";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 export interface ChildNavigationLink {
   name: string;
@@ -28,25 +28,41 @@ export interface NavigationLink {
 const Header = () => {
   const { main }: { [key: string]: NavigationLink[] } = menu;
   const { navigation_button } = config;
-  // get current path
   const pathname = usePathname();
+  const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
 
-  // scroll to top on route change
   useEffect(() => {
     window.scroll(0, 0);
+    setActiveDropdown(null); // Close dropdowns when navigating
   }, [pathname]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (!target.closest(".nav-dropdown")) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+  const toggleDropdown = (index: number) => {
+    setActiveDropdown(activeDropdown === index ? null : index);
+  };
 
   return (
     <>
       <header
-        className={`header sticky top-0 z-30 ${!(pathname === "/") && "mb-10"}`}
+        className={`header sticky top-0 z-50 ${!(pathname === "/") && "mb-10"}`}
       >
         <nav className="navbar container relative z-10">
-          {/* logo  */}
           <div className="order-0">
             <Logo />
           </div>
-          {/* navbar toggler  */}
           <input id="nav-toggle" type="checkbox" className="hidden" />
           <label
             htmlFor="nav-toggle"
@@ -72,7 +88,6 @@ const Header = () => {
               ></polygon>
             </svg>
           </label>
-          {/* /navbar toggler  */}
           <ul
             id="nav-menu"
             className="navbar-nav order-3 hidden pb-6 lg:order-1 lg:flex lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-4"
@@ -80,7 +95,9 @@ const Header = () => {
             {main.map((menu, index) => (
               <React.Fragment key={index}>
                 {menu.hasMegamenu && menu.name ? (
-                  <li className="nav-item nav-dropdown group">
+                  <li
+                    className={`nav-item nav-dropdown group ${activeDropdown === index ? "active" : ""}`}
+                  >
                     <span
                       className={`nav-link inline-flex items-center ${
                         menu.children
@@ -92,6 +109,7 @@ const Header = () => {
                           ? "active"
                           : ""
                       }`}
+                      onClick={() => toggleDropdown(index)}
                     >
                       {menu.name}
                       <span className="arrow-icon">
@@ -103,11 +121,11 @@ const Header = () => {
                         </svg>
                       </span>
                     </span>
-                    <div className="mega-menu-wrapper max-lg:hidden max-lg:group-[.active]:flex max-lg:group-[.active]:flex-col lg:invisible lg:absolute  lg:flex lg:opacity-0 lg:transition-all lg:duration-300 lg:group-hover:visible lg:group-hover:opacity-100">
+                    <div className="mega-menu-wrapper max-lg:hidden max-lg:group-[.active]:flex max-lg:group-[.active]:flex-col lg:invisible lg:absolute lg:flex lg:opacity-0 lg:transition-all lg:duration-300 lg:group-hover:visible lg:group-hover:opacity-100">
                       {menu.children?.map((subchild, index) => (
                         <div
                           key={subchild.name}
-                          className="flex flex-col gap-5"
+                          className="flex flex-col gap-2"
                         >
                           {subchild.name && (
                             <p
@@ -118,7 +136,7 @@ const Header = () => {
                             />
                           )}
                           <ul
-                            className={`nav-dropdown-list ${index === 0 ? "flex w-[150px] flex-col gap-5" : "gap-x-16 sm:columns-2 md:columns-3 lg:grid lg:grid-cols-[repeat(3,_1fr)]"}`}
+                            className={`nav-dropdown-list ${index === 0 ? "flex w-[150px] flex-col gap-2" : "gap-x-16 sm:columns-2 md:columns-3 lg:grid lg:grid-cols-[repeat(3,_1fr)]"}`}
                           >
                             {subchild.children?.map((child) => (
                               <li
@@ -150,7 +168,9 @@ const Header = () => {
                     </div>
                   </li>
                 ) : menu.hasChildren && menu.name ? (
-                  <li className="nav-item nav-dropdown group relative">
+                  <li
+                    className={`nav-item nav-dropdown group relative ${activeDropdown === index ? "active" : ""}`}
+                  >
                     <span
                       className={`nav-link inline-flex items-center ${
                         menu.children
@@ -162,6 +182,7 @@ const Header = () => {
                           ? "active"
                           : ""
                       }`}
+                      onClick={() => toggleDropdown(index)}
                     >
                       {menu.name}
                       <span className="arrow-icon">
@@ -237,9 +258,9 @@ const Header = () => {
           </div>
         </nav>
       </header>
-      {/* Background Pattern Image Show Only Home & Changelog Page */}
+      {/* Background Pattern Image Show Only Home & Changelog Page - Hidden on mobile for better readability */}
       {(pathname === "/" || pathname.startsWith("/changelog")) && (
-        <div aria-hidden="true">
+        <div aria-hidden="true" className="hidden md:block">
           <ImageFallback
             className="pointer-events-none absolute inset-x-0 top-[80%] -z-10 w-full -translate-y-2/4 object-cover p-0 md:top-[95%]"
             src={"/images/uniteq-banner3.png"}

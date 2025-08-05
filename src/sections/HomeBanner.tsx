@@ -19,7 +19,7 @@ const HomeBanner = ({ data }: HomeBannerProps) => {
               <h1
                 dangerouslySetInnerHTML={markdownify(title)}
                 data-aos="fade-up-sm"
-                className="has-gradient mb-4 text-h2 lg:text-h1 2xl:text-6xl"
+                className="has-gradient mb-4 text-h1 lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold"
               />
             )}
             {description && (
@@ -81,7 +81,7 @@ const HomeBanner = ({ data }: HomeBannerProps) => {
               data-aos="fade-up-sm"
               data-aos-delay="400"
             >
-              <div className="max-h-[825px] h-[825px] sm:h-[600px] md:h-[700px] lg:h-[825px]">
+              <div className="relative">
                 <ImageFallback
                   src={image.src}
                   alt={image.alt}

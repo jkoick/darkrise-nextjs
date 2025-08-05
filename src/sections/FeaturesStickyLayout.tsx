@@ -19,7 +19,7 @@ const FeaturesStickyLayout = ({ data, sticky = true }: FeaturesStickyLayoutProps
           return (
             <div
               key={mindex}
-              className={`overflow-hidden rounded-3xl border border-border bg-primary ${!sticky ? `mb-10 last:mb-0 ` : `max-lg:mb-10 max-lg:last:mb-0 lg:sticky ` + (mindex === 1 ? "lg:top-[160px]" : "lg:top-[120px]")}`}
+              className={`overflow-hidden rounded-3xl border border-border bg-primary ${!sticky ? `mb-10 last:mb-0 ` : `sticky ` + (mindex === 1 ? "top-[40px] lg:top-[80px]" : "top-[20px] lg:top-[60px]")}`}
             >
               <div className="row">
                 <div className="lg:col-6" data-aos="fade-up-sm">

@@ -6,7 +6,7 @@ import {
   valuesContent,
   teamContent,
   careerCtaContent,
-  callToAction1Content
+  callToAction1Content,
 } from "@/data/content";
 
 const About = () => {
