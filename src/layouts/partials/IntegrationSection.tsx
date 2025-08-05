@@ -10,7 +10,7 @@ const FE_STACK = [
   "TypeScript",
   "React",
   "Next.js",
-  "Vue",
+  "Vue.js",
   "Nuxt",
   "Tailwind CSS",
   "Vite",
@@ -36,15 +36,11 @@ const IntegrationSection = ({
   const button = {
     enable: true,
     label: "View All Integrations",
-    link: "/integrations"
+    link: "/integrations",
   };
 
-  const firstListRaw = integrations.filter((p) =>
-    FE_STACK.includes(p.name),
-  );
-  const secondListRaw = integrations.filter(
-    (p) => !FE_STACK.includes(p.name),
-  );
+  const firstListRaw = integrations.filter((p) => FE_STACK.includes(p.name));
+  const secondListRaw = integrations.filter((p) => !FE_STACK.includes(p.name));
 
   const firstList = [...firstListRaw, ...firstListRaw];
   const secondList = [...secondListRaw, ...secondListRaw];
@@ -123,31 +119,27 @@ const IntegrationSection = ({
                 </div>
                 <div className="marquee-wrapper mt-5 flex gap-5 overflow-hidden">
                   <div className="marquee marquee-duration-60 marquee-reverse flex shrink-0 items-center justify-center gap-5">
-                    {secondList.map(
-                      (item, i: number) => (
-                        <IntegrationCard
-                          key={`${item.name}-${i}`}
-                          style={`${fluidContainer ? "rounded-xl" : "rounded-t-xl"}`}
-                          image={item.icon}
-                          name={item.name}
-                        />
-                      ),
-                    )}
+                    {secondList.map((item, i: number) => (
+                      <IntegrationCard
+                        key={`${item.name}-${i}`}
+                        style={`${fluidContainer ? "rounded-xl" : "rounded-t-xl"}`}
+                        image={item.icon}
+                        name={item.name}
+                      />
+                    ))}
                   </div>
                   <div
                     className="marquee marquee-duration-60 marquee-reverse flex shrink-0 items-center justify-center gap-5"
                     aria-hidden="true"
                   >
-                    {secondList.map(
-                      (item, i: number) => (
-                        <IntegrationCard
-                          key={`${item.name}-${i}`}
-                          style={`${fluidContainer ? "rounded-xl" : "rounded-t-xl"}`}
-                          image={item.icon}
-                          name={item.name}
-                        />
-                      ),
-                    )}
+                    {secondList.map((item, i: number) => (
+                      <IntegrationCard
+                        key={`${item.name}-${i}`}
+                        style={`${fluidContainer ? "rounded-xl" : "rounded-t-xl"}`}
+                        image={item.icon}
+                        name={item.name}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>
@@ -201,22 +193,19 @@ const IntegrationSection = ({
               >
                 <div className="marquee-wrapper flex gap-5 overflow-hidden">
                   <div className="marquee marquee-duration-60 flex shrink-0 items-center justify-center gap-5">
-                    {firstList.map(
-                      (item, i: number) => (
-                        <IntegrationCard
-                          key={`${item.name}-${i}`}
-                          image={item.icon}
-                          name={item.name}
-                        />
-                      ),
-                    )}
+                    {firstList.map((item, i: number) => (
+                      <IntegrationCard
+                        key={`${item.name}-${i}`}
+                        image={item.icon}
+                        name={item.name}
+                      />
+                    ))}
                   </div>
                   <div
                     className="marquee marquee-duration-60 flex shrink-0 items-center justify-center gap-5"
                     aria-hidden="true"
                   >
-                    {firstList.map(
-                      (item, i: number) => (
+                    {firstList.map((item, i: number) => (
                         <IntegrationCard
                           key={`${item.name}-${i}`}
                           image={item.icon}
@@ -228,31 +217,27 @@ const IntegrationSection = ({
                 </div>
                 <div className="marquee-wrapper mt-5 flex gap-5 overflow-hidden">
                   <div className="marquee marquee-duration-60 marquee-reverse flex shrink-0 items-center justify-center gap-5">
-                    {secondList.map(
-                      (item, i: number) => (
-                        <IntegrationCard
-                          key={`${item.name}-${i}`}
-                          style={`${fluidContainer ? "rounded-xl" : "rounded-t-xl"}`}
-                          image={item.icon}
-                          name={item.name}
-                        />
-                      ),
-                    )}
+                    {secondList.map((item, i: number) => (
+                      <IntegrationCard
+                        key={`${item.name}-${i}`}
+                        style={`${fluidContainer ? "rounded-xl" : "rounded-t-xl"}`}
+                        image={item.icon}
+                        name={item.name}
+                      />
+                    ))}
                   </div>
                   <div
                     className="marquee marquee-duration-60 marquee-reverse flex shrink-0 items-center justify-center gap-5"
                     aria-hidden="true"
                   >
-                    {secondList.map(
-                      (item, i: number) => (
-                        <IntegrationCard
-                          key={`${item.name}-${i}`}
-                          style={`${fluidContainer ? "rounded-xl" : "rounded-t-xl"}`}
-                          image={item.icon}
-                          name={item.name}
-                        />
-                      ),
-                    )}
+                    {secondList.map((item, i: number) => (
+                      <IntegrationCard
+                        key={`${item.name}-${i}`}
+                        style={`${fluidContainer ? "rounded-xl" : "rounded-t-xl"}`}
+                        image={item.icon}
+                        name={item.name}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>

@@ -4,16 +4,18 @@ import { callToAction2Content } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const CallToAction2 = () => {
-  const { enable, title, bg_image, description, button, list } = callToAction2Content;
+  const { enable, title, bg_image, description, button, list } =
+    callToAction2Content;
   return (
     <>
       {enable && (
         <section className="section">
           <div className="container">
-            <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-dark/60 py-40">
+            <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-dark py-40 group">
               <div aria-hidden="true">
+                <div className="absolute inset-0 z-5 bg-black/40 backdrop-blur-[0.5px]"></div>
                 <ImageFallback
-                  className="absolute bottom-0 z-0 h-full w-full"
+                  className="absolute rotate-y-180 object-cover bottom-0 z-0 h-full w-full"
                   src={bg_image}
                   alt="background pattern image"
                   width={1920}
@@ -242,28 +244,30 @@ const CallToAction2 = () => {
                   />
                 </div>
               </div>
-              <div className="row relative z-10 px-5 lg:gy-0 md:px-10">
+              <div className="row relative z-20 px-5 lg:gy-0 md:px-10">
                 <div className="mx-auto text-center lg:col-6">
-                  <h2
-                    dangerouslySetInnerHTML={markdownify(title)}
-                    className="has-gradient mb-4"
-                    data-aos="fade-up-sm"
-                  />
-                  <div data-aos="fade-up-sm" data-aos-delay="50">
-                    <p
-                      dangerouslySetInnerHTML={markdownify(description)}
-                      className="text-lg/[inherit] opacity-50"
-                    />
-                  </div>
-                  {button && button.enable && (
-                    <AnimatedAnchor
-                      className="btn-primary mt-10"
-                      link={button.link}
-                      label={button.label}
+                  <div className="bg-dark p-8 rounded-2xl border border-white/10 shadow-2xl">
+                    <h2
+                      dangerouslySetInnerHTML={markdownify(title)}
+                      className="has-gradient mb-6 text-white"
                       data-aos="fade-up-sm"
-                      data-aos-delay="150"
                     />
-                  )}
+                    <div data-aos="fade-up-sm" data-aos-delay="50">
+                      <p
+                        dangerouslySetInnerHTML={markdownify(description)}
+                        className="text-lg/[inherit] text-white/90 mb-8"
+                      />
+                    </div>
+                    {button && button.enable && (
+                      <AnimatedAnchor
+                        className="btn-primary mt-2"
+                        link={button.link}
+                        label={button.label}
+                        data-aos="fade-up-sm"
+                        data-aos-delay="150"
+                      />
+                    )}
+                  </div>
                 </div>
               </div>
               {/* Overlay */}

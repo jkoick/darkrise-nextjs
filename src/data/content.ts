@@ -53,6 +53,7 @@ export interface IntegrationData {
   description: string;
   integrations: Array<{
     name: string;
+    slug: string;
     icon: string;
     description: string;
     category: string;
@@ -155,11 +156,6 @@ export const customersLogoContent: CustomersLogoData = {
   description:
     "Join the companies that trust Uniteq Lab for their digital transformation.",
   logos: [
-    { src: "/images/customers-logo/1.svg", alt: "Customer 1" },
-    { src: "/images/customers-logo/2.svg", alt: "Customer 2" },
-    { src: "/images/customers-logo/3.svg", alt: "Customer 3" },
-    { src: "/images/customers-logo/4.svg", alt: "Customer 4" },
-    { src: "/images/customers-logo/5.svg", alt: "Customer 5" },
     { src: "/images/customers-logo/6.svg", alt: "Customer 6" },
     { src: "/images/customers-logo/7.svg", alt: "Customer 7" },
     { src: "/images/customers-logo/8.svg", alt: "Customer 8" },
@@ -176,7 +172,7 @@ export const callToAction1Content: CallToActionData = {
   description:
     "Get started with Uniteq Lab today and see the difference our expertise can make.",
   image: {
-    src: "/images/call-to-action.png",
+    src: "/images/banner1.png",
     alt: "Transform your business",
   },
   buttons: [
@@ -199,153 +195,122 @@ export const integrationContent: IntegrationData = {
   integrations: [
     {
       name: "React",
+      slug: "react",
       icon: "/images/integration/react.svg",
       description: "Frontend framework",
       category: "Frontend",
     },
     {
       name: "Next.js",
+      slug: "nextjs",
       icon: "/images/integration/nextjs.svg",
       description: "React framework",
       category: "Frontend",
     },
     {
       name: "Vue.js",
+      slug: "vue",
       icon: "/images/integration/vue.svg",
       description: "Progressive framework",
       category: "Frontend",
     },
     {
       name: "Nuxt",
+      slug: "nuxt",
       icon: "/images/integration/nuxt.svg",
       description: "Vue framework",
       category: "Frontend",
     },
     {
       name: "Node.js",
+      slug: "nodejs",
       icon: "/images/integration/nodejs.svg",
       description: "Backend runtime",
       category: "Backend",
     },
     {
       name: "Python",
+      slug: "python",
       icon: "/images/integration/python.svg",
       description: "Programming language",
       category: "Backend",
     },
     {
       name: "Django",
+      slug: "django",
       icon: "/images/integration/django.svg",
       description: "Python framework",
       category: "Backend",
     },
     {
       name: "PostgreSQL",
+      slug: "postgresql",
       icon: "/images/integration/postgresql.svg",
       description: "Database",
       category: "Database",
     },
     {
       name: "MongoDB",
+      slug: "mongodb",
       icon: "/images/integration/mongodb.svg",
       description: "NoSQL database",
       category: "Database",
     },
     {
       name: "Redis",
+      slug: "redis",
       icon: "/images/integration/redis.svg",
       description: "In-memory database",
       category: "Database",
     },
     {
       name: "Docker",
+      slug: "docker",
       icon: "/images/integration/docker.svg",
       description: "Containerization",
       category: "DevOps",
     },
     {
       name: "Vite",
+      slug: "vite",
       icon: "/images/integration/vite.svg",
       description: "Build tool",
       category: "Tools",
     },
     {
       name: "TypeScript",
+      slug: "typescript",
       icon: "/images/integration/ts.svg",
       description: "Type-safe JavaScript",
       category: "Language",
     },
     {
       name: "JavaScript",
+      slug: "js",
       icon: "/images/integration/js.svg",
       description: "Programming language",
       category: "Language",
     },
     {
       name: "HTML",
+      slug: "html",
       icon: "/images/integration/html.svg",
       description: "Markup language",
       category: "Frontend",
     },
     {
       name: "CSS",
+      slug: "css",
       icon: "/images/integration/css.svg",
       description: "Styling language",
       category: "Frontend",
     },
     {
       name: "Tailwind CSS",
+      slug: "tailwind",
       icon: "/images/integration/tailwind.svg",
       description: "CSS framework",
       category: "Frontend",
-    },
-    {
-      name: "Shopify",
-      icon: "/images/integration/shopify.svg",
-      description: "E-commerce platform",
-      category: "E-commerce",
-    },
-    {
-      name: "Slack",
-      icon: "/images/integration/slack.svg",
-      description: "Communication",
-      category: "Communication",
-    },
-    {
-      name: "Mailchimp",
-      icon: "/images/integration/mailchimp.svg",
-      description: "Email marketing",
-      category: "Marketing",
-    },
-    {
-      name: "HubSpot",
-      icon: "/images/integration/hubspot.svg",
-      description: "CRM platform",
-      category: "CRM",
-    },
-    {
-      name: "Zapier",
-      icon: "/images/integration/zapier.svg",
-      description: "Automation",
-      category: "Automation",
-    },
-    {
-      name: "Intercom",
-      icon: "/images/integration/intercom.svg",
-      description: "Customer messaging",
-      category: "Support",
-    },
-    {
-      name: "Dropbox",
-      icon: "/images/integration/dropbox.svg",
-      description: "File storage",
-      category: "Storage",
-    },
-    {
-      name: "Kickstarter",
-      icon: "/images/integration/kickstarter.svg",
-      description: "Crowdfunding",
-      category: "Funding",
     },
   ],
 };
@@ -1065,18 +1030,18 @@ export const callToAction2Content: CallToAction2Data = {
   title: "Ready to Transform Your Business?",
   description:
     "Join thousands of satisfied customers who have already transformed their business with our solutions.",
-  bg_image: "/images/call-to-action/bg-2.png",
+  bg_image: "/images/uniteq-banner4.png",
   button: {
     enable: true,
     label: "Get Started Today",
     link: "/contact",
   },
   list: [
-    { icon: "/images/icons/svg/user.svg" },
+    { icon: "/images/icons/svg/customer.svg" },
     { icon: "/images/icons/svg/chart.svg" },
-    { icon: "/images/icons/svg/settings.svg" },
-    { icon: "/images/icons/svg/shield.svg" },
-    { icon: "/images/icons/svg/star.svg" },
+    { icon: "/images/icons/svg/detection.svg" },
+    { icon: "/images/icons/svg/shield-check.svg" },
+    { icon: "/images/icons/svg/collaboration.svg" },
     { icon: "/images/icons/svg/rocket.svg" },
   ],
 };

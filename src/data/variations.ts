@@ -171,14 +171,14 @@ export const developerIntegrationsContent: IntegrationData = {
   title: "Developer-First Integrations",
   description: "Comprehensive APIs, SDKs, and tools for developers to build and extend.",
   integrations: [
-    { name: "REST API", icon: "/images/integration/api.svg", description: "Full REST API access", category: "API" },
-    { name: "GraphQL", icon: "/images/integration/graphql.svg", description: "GraphQL endpoint", category: "API" },
-    { name: "Webhooks", icon: "/images/integration/webhooks.svg", description: "Real-time event notifications", category: "API" },
-    { name: "CLI Tools", icon: "/images/integration/cli.svg", description: "Command line interface", category: "Tools" },
-    { name: "VS Code", icon: "/images/integration/vscode.svg", description: "IDE extension", category: "Tools" },
-    { name: "Postman", icon: "/images/integration/postman.svg", description: "API collection", category: "Tools" },
-    { name: "GitHub Actions", icon: "/images/integration/github.svg", description: "CI/CD integration", category: "DevOps" },
-    { name: "GitLab CI", icon: "/images/integration/gitlab.svg", description: "Pipeline integration", category: "DevOps" }
+    { name: "REST API", slug: "rest-api", icon: "/images/integration/api.svg", description: "Full REST API access", category: "API" },
+    { name: "GraphQL", slug: "graphql", icon: "/images/integration/graphql.svg", description: "GraphQL endpoint", category: "API" },
+    { name: "Webhooks", slug: "webhooks", icon: "/images/integration/webhooks.svg", description: "Real-time event notifications", category: "API" },
+    { name: "CLI Tools", slug: "cli-tools", icon: "/images/integration/cli.svg", description: "Command line interface", category: "Tools" },
+    { name: "VS Code", slug: "vscode", icon: "/images/integration/vscode.svg", description: "IDE extension", category: "Tools" },
+    { name: "Postman", slug: "postman", icon: "/images/integration/postman.svg", description: "API collection", category: "Tools" },
+    { name: "GitHub Actions", slug: "github-actions", icon: "/images/integration/github.svg", description: "CI/CD integration", category: "DevOps" },
+    { name: "GitLab CI", slug: "gitlab-ci", icon: "/images/integration/gitlab.svg", description: "Pipeline integration", category: "DevOps" }
   ]
 };
 

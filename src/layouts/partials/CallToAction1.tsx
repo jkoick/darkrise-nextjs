@@ -7,7 +7,7 @@ const CallToAction1 = () => {
   const { title, description, buttons, image } = callToAction1Content;
   const enable = true;
   const button = buttons[0];
-  const bg_image = "/images/call-to-action/bg-pattern.png";
+  const bg_image = "/images/uniteq-banner3.png";
 
   return (
     <>
@@ -15,19 +15,19 @@ const CallToAction1 = () => {
         <section className="section">
           <div className="container">
             <div className="relative overflow-hidden rounded-2xl border border-border bg-dark/60 p-7 !pb-0 md:p-10 lg:pl-16 lg:pr-0 lg:pt-16">
-              <div className="row relative z-10 lg:gy-0">
+              <div className="row relative z-50 lg:gy-0">
                 <div className="lg:col-5">
                   <div className="min-h-full pb-16">
-                    <div>
+                    <div className="bg-black/50 backdrop-blur-sm p-6 rounded-xl border border-white/10">
                       <h2
                         dangerouslySetInnerHTML={markdownify(title)}
-                        className="has-gradient mb-6"
+                        className="mb-6 text-white"
                         data-aos="fade-up-sm"
                       />
                       <div data-aos="fade-up-sm" data-aos-delay="50">
                         <p
                           dangerouslySetInnerHTML={markdownify(description)}
-                          className="text-lg/[inherit] opacity-50"
+                          className="text-lg/[inherit] text-white/90"
                         />
                       </div>
                     </div>
@@ -59,6 +59,7 @@ const CallToAction1 = () => {
                 )}
               </div>
               <div aria-hidden="true">
+                <div className="bg-gradient-to-t from-black/80 via-transparent to-transparent absolute inset-0 z-10 w-full h-full"></div>
                 <ImageFallback
                   className="absolute inset-0 z-0 h-full w-full object-contain object-left-bottom"
                   src={bg_image}

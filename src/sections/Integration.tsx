@@ -44,11 +44,11 @@ const Integration = ({
   const { title, description, integrations } = data;
 
   // Convert integrations to the format expected by IntegrationCard
-  const list = integrations.map(item => ({
+  const list = integrations.map((item) => ({
     frontmatter: {
       title: item.name,
-      image: item.icon
-    }
+      image: item.icon,
+    },
   }));
 
   const firstListRaw = list.filter((p) =>

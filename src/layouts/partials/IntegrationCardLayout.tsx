@@ -1,19 +1,31 @@
+"use client";
+
 import AnimatedAnchor from "@/components/AnimatedAnchor";
 import ImageFallback from "@/helpers/ImageFallback";
 import { integrationContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
+import { useState } from "react";
 
 const IntegrationCardLayout = () => {
   const { title, description, integrations } = integrationContent;
-  const list = integrations.map((item) => ({
-    slug: item.name.toLowerCase().replace(/\s+/g, '-'),
-    frontmatter: {
-      title: item.name,
-      description: item.description,
-      image: item.icon,
-      type: item.category
-    }
-  }));
+  const [activeFilter, setActiveFilter] = useState<string>("All");
+
+  // Get unique categories
+  const categories = [
+    "All",
+    ...Array.from(new Set(integrations.map((item) => item.category))),
+  ];
+  const list = integrations
+    .filter((item) => activeFilter === "All" || item.category === activeFilter)
+    .map((item) => ({
+      slug: item.slug,
+      frontmatter: {
+        title: item.name,
+        description: item.description,
+        image: item.icon,
+        type: item.category,
+      },
+    }));
 
   return (
     <section className="section">
@@ -33,14 +45,40 @@ const IntegrationCardLayout = () => {
               />
             )}
           </div>
+
+          {/* Filter Buttons */}
+          <div
+            className="col-12 pt-10"
+            data-aos="fade-up-sm"
+            data-aos-delay="100"
+          >
+            <div className="flex flex-wrap justify-center gap-3 mb-4">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setActiveFilter(category)}
+                  className={`btn btn-sm transition-all duration-300 ${
+                    activeFilter === category
+                      ? "btn-primary"
+                      : "btn-outline-transparent hover:bg-white/10"
+                  }`}
+                >
+                  <span className="relative z-10">{category}</span>
+                </button>
+              ))}
+            </div>
+            <p className="text-center text-sm text-white/60">
+              Showing {list.length} integration{list.length !== 1 ? "s" : ""}
+            </p>
+          </div>
           <div className="col-12 pt-20 relative">
             <div className="row g-4 justify-center">
               {list?.map(({ frontmatter, slug }, index) => (
                 <div
                   key={slug}
-                  className="md:col-6 lg:col-4"
+                  className="md:col-6 lg:col-4 transition-all duration-500 ease-in-out"
                   data-aos="fade-up-sm"
-                  data-aos-delay={index * 100}
+                  data-aos-delay={index * 50}
                 >
                   <div className="group relative min-h-full overflow-hidden rounded-lg border border-white/5 bg-dark p-9 duration-300 hover:-translate-y-1">
                     <div className="relative z-20">

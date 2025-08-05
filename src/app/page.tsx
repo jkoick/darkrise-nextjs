@@ -3,7 +3,6 @@ import CustomersLogo from "@/sections/CustomersLogo";
 import FeaturesStickyLayout from "@/sections/FeaturesStickyLayout";
 import FeaturesCardLayout from "@/sections/FeaturesCardLayout";
 import Integration from "@/sections/Integration";
-import CallToAction from "@/sections/CallToAction";
 import SeoMeta from "@/partials/SeoMeta";
 import {
   homeBannerContent,
@@ -11,8 +10,8 @@ import {
   featuresContent,
   featuresCardLayoutContent,
   integrationContent,
-  callToAction1Content
 } from "@/data/content";
+import CallToAction1 from "@/partials/CallToAction1";
 
 const Home = () => {
   return (
@@ -23,7 +22,7 @@ const Home = () => {
       <FeaturesStickyLayout data={featuresContent} />
       <FeaturesCardLayout data={featuresCardLayoutContent} />
       <Integration data={integrationContent} />
-      <CallToAction data={callToAction1Content} variant="centered" />
+      <CallToAction1 />
     </>
   );
 };

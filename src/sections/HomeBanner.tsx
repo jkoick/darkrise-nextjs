@@ -8,32 +8,13 @@ interface HomeBannerProps {
 }
 
 const HomeBanner = ({ data }: HomeBannerProps) => {
-  const { title, note, description, buttons, list, image } = data;
+  const { title, description, buttons, list, image } = data;
 
   return (
     <section className="overflow-hidden pb-0 pt-16 relative">
       <div className="container">
         <div className="row justify-center">
           <div className="pt-6 text-center md:col-10 lg:col-10 xl:col-11 2xl:col-12">
-            {note && (
-              <div
-                data-aos="fade-up-sm"
-                className="border-animation mx-auto mb-4 w-fit rounded-full p-px relative"
-              >
-                <div className="border-animation-inner flex gap-2 rounded-full border border-white/15 px-3 py-1.5">
-                  <ImageFallback
-                    width={24}
-                    height={24}
-                    src="/images/icons/svg/award.svg"
-                    alt="note"
-                  />
-                  <span
-                    className="text-sm opacity-70 md:text-base"
-                    dangerouslySetInnerHTML={markdownify(note)}
-                  />
-                </div>
-              </div>
-            )}
             {title && (
               <h1
                 dangerouslySetInnerHTML={markdownify(title)}
@@ -42,16 +23,18 @@ const HomeBanner = ({ data }: HomeBannerProps) => {
               />
             )}
             {description && (
-              <p
-                dangerouslySetInnerHTML={markdownify(description)}
-                data-aos="fade-up-sm"
-                className="mb-8 text-xl/[inherit] text-light p-4 rounded-md bg-gradient-to-b from-black via-black to-none 2xl:text-2xl 2xl:max-w-4xl 2xl:mx-auto"
-              />
+              <div className="mb-8 2xl:max-w-4xl 2xl:mx-auto">
+                <p
+                  dangerouslySetInnerHTML={markdownify(description)}
+                  data-aos="fade-up-sm"
+                  className="text-xl/[inherit] text-white bg-black/40 backdrop-blur-sm p-6 rounded-lg border border-white/10 shadow-lg 2xl:text-2xl"
+                />
+              </div>
             )}
             {buttons && buttons.length > 0 && (
-              <ul className="flex flex-wrap justify-center gap-4">
+              <ul className="flex flex-wrap justify-center gap-4 mt-8">
                 {buttons
-                  .filter(button => button.enable)
+                  .filter((button) => button.enable)
                   .map((button, index) => (
                     <li
                       key={index}
@@ -59,9 +42,11 @@ const HomeBanner = ({ data }: HomeBannerProps) => {
                       data-aos-delay={100 + index * 50}
                     >
                       <AnimatedAnchor
-                        className={`${index === 0 ? "btn-primary" : "btn-outline-transparent"}`}
+                        className={`${index === 0 ? "btn-primary shadow-lg" : "btn-outline-white bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"}`}
                         link={button.link}
-                        target={button.link.startsWith("http") ? "_blank" : "_self"}
+                        target={
+                          button.link.startsWith("http") ? "_blank" : "_self"
+                        }
                         rel="noopener"
                         label={button.label}
                         hideIcon={!(index === 0)}
@@ -74,15 +59,15 @@ const HomeBanner = ({ data }: HomeBannerProps) => {
               <ul
                 data-aos="fade-up-sm"
                 data-aos-delay="200"
-                className="mt-6 flex flex-wrap justify-center gap-4"
+                className="mt-8 flex flex-wrap justify-center gap-4 bg-black/20 backdrop-blur-sm p-4 rounded-lg border border-white/10"
               >
                 {list.map((item, index) => (
                   <li
                     key={index}
-                    className="flex items-center gap-4 text-sm opacity-70"
+                    className="flex items-center gap-4 text-sm text-white font-medium"
                   >
                     {!(index === 0) && (
-                      <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-white" />
                     )}
                     <span dangerouslySetInnerHTML={markdownify(item)} />
                   </li>
