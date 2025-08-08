@@ -13,27 +13,23 @@ const BlogSection = ({
   largeHeading?: boolean;
   posts?: Post[];
 }) => {
-  // Get default blog data from the "sections" content collection
   let blogIndex: RegularPage = getListPage("blog/_index.md");
   let { title, description } = blogIndex.frontmatter;
 
-  // Override default blog data (Title, Subtitle & Description) with props if provided
   if (content) {
     ({ title, description } = content);
   }
 
-  // Constant for blog folder path
   const BLOG_FOLDER = "blog";
 
-  // Get all blog posts from the specified folder if no posts are passed as props
   posts = posts ? posts : getSinglePage(BLOG_FOLDER);
 
-  // Randomly select a featured post from all posts
   const randomIndex = Math.floor(Math.random() * posts.length);
   const featuredPost = posts[randomIndex];
-  const featuredExcludePosts = posts.filter((_, index) => index !== randomIndex);
+  const featuredExcludePosts = posts.filter(
+    (_, index) => index !== randomIndex,
+  );
 
-  // Sort remaining blog posts by date in descending order
   let sortedPosts = sortByDate(featuredExcludePosts);
 
   return (
