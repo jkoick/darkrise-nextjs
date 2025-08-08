@@ -1,12 +1,12 @@
 // Examples showing how to use the new component structure
 
-import { 
+import {
   HomeBanner,
   Features,
   CustomersLogo,
   CallToAction,
   Integration,
-  FeaturesCardLayout
+  FeaturesCardLayout,
 } from "@/sections";
 
 import {
@@ -15,7 +15,7 @@ import {
   customersLogoContent,
   callToAction1Content,
   integrationContent,
-  featuresCardLayoutContent
+  featuresCardLayoutContent,
 } from "@/data/content";
 
 // Example: Basic Homepage
@@ -34,13 +34,13 @@ export const ExampleHomePage = () => {
 export const ExampleFeaturesPage = () => {
   return (
     <>
-      <HomeBanner 
+      <HomeBanner
         data={{
           ...homeBannerContent,
           title: "Powerful Features",
           description: "Discover what makes our platform special",
-          note: "Feature Overview"
-        }} 
+          note: "Feature Overview",
+        }}
       />
       <FeaturesCardLayout data={featuresCardLayoutContent} />
       <Features data={featuresContent} />
@@ -54,22 +54,13 @@ export const ExampleCTAVariations = () => {
   return (
     <>
       {/* Centered CTA */}
-      <CallToAction 
-        data={callToAction1Content} 
-        variant="centered" 
-      />
-      
+      <CallToAction data={callToAction1Content} variant="centered" />
+
       {/* Split layout CTA */}
-      <CallToAction 
-        data={callToAction1Content} 
-        variant="split" 
-      />
-      
+      <CallToAction data={callToAction1Content} variant="split" />
+
       {/* Default card CTA */}
-      <CallToAction 
-        data={callToAction1Content} 
-        variant="default" 
-      />
+      <CallToAction data={callToAction1Content} variant="default" />
     </>
   );
 };
@@ -85,14 +76,14 @@ export const ExampleCustomContent = () => {
       button: {
         enable: true,
         label: "Learn More",
-        link: "/features"
-      }
-    }
+        link: "/features",
+      },
+    },
   ];
 
   return (
     <>
-      <Features 
+      <Features
         data={customFeatures}
         title="Our Custom Solutions"
         description="Tailored specifically for your needs"

@@ -286,7 +286,7 @@
   @apply prose-pre:rounded-lg prose-pre:bg-dark prose-pre:border prose-pre:border-border;
   @apply prose-code:px-1 prose-code:text-text prose-code:bg-white/5 prose-code:rounded;
   @apply prose-strong:text-white prose-strong:font-semibold;
-  @apply prose-a:text-primary prose-a:underline prose-a:underline-offset-4 hover:prose-a:text-white;
+  @apply prose-a:text-white prose-a:underline prose-a:underline-offset-4 hover:prose-a:text-white;
   @apply prose-li:!my-1 prose-li:text-text prose-li:opacity-70 marker:text-text;
   @apply prose-ol:pl-[1em];
   @apply prose-table:relative prose-table:overflow-hidden prose-table:rounded-lg prose-table:before:absolute prose-table:before:left-0 prose-table:before:top-0 prose-table:before:h-full prose-table:before:w-full prose-table:before:rounded-[inherit] prose-table:before:border-border prose-table:before:content-[""];

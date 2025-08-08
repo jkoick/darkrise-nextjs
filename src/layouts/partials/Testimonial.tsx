@@ -13,12 +13,12 @@ const Testimonial = ({
 }) => {
   let { title, testimonials } = testimonialContent;
   let list = testimonials;
-  
+
   const subtitle = "What Our Clients Say";
   const button = {
     enable: true,
     label: "View All Testimonials",
-    link: "/testimonials"
+    link: "/testimonials",
   };
 
   // Exclude featured item from list

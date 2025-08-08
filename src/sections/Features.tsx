@@ -31,7 +31,7 @@ const Features = ({ data, title, description }: FeaturesProps) => {
             </div>
           </div>
         )}
-        
+
         <div className="row g-4 justify-center">
           {data.map((feature, index) => (
             <div key={index} className="lg:col-4 md:col-6">
@@ -49,22 +49,22 @@ const Features = ({ data, title, description }: FeaturesProps) => {
                         alt={feature.title}
                         width={400}
                         height={200}
-                        className={`w-full h-auto ${imgIndex > 0 ? 'mt-2' : ''}`}
+                        className={`w-full h-auto ${imgIndex > 0 ? "mt-2" : ""}`}
                       />
                     ))}
                   </div>
                 )}
-                
+
                 <h3
                   className="mb-4 text-xl font-semibold"
                   dangerouslySetInnerHTML={markdownify(feature.title)}
                 />
-                
+
                 <p
                   className="mb-4 text-light"
                   dangerouslySetInnerHTML={markdownify(feature.description)}
                 />
-                
+
                 {feature.list && feature.list.length > 0 && (
                   <ul className="mb-6 space-y-2">
                     {feature.list.map((item, listIndex) => (
@@ -78,12 +78,16 @@ const Features = ({ data, title, description }: FeaturesProps) => {
                     ))}
                   </ul>
                 )}
-                
+
                 {feature.button && feature.button.enable && (
                   <AnimatedAnchor
                     className="btn-outline-primary"
                     link={feature.button.link}
-                    target={feature.button.link.startsWith("http") ? "_blank" : "_self"}
+                    target={
+                      feature.button.link.startsWith("http")
+                        ? "_blank"
+                        : "_self"
+                    }
                     rel="noopener"
                     label={feature.button.label}
                   />

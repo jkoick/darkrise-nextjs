@@ -116,7 +116,7 @@ const BlogCarousel = ({ data }: BlogCarouselProps) => {
                 key={index}
                 className="flex-none w-[280px] sm:w-[320px] snap-start cursor-pointer"
               >
-                <div className="group relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm hover:from-white/10 hover:to-white/15 transition-all duration-300 h-full">
+                <div className="group relative overflow-hidden rounded-2xl border border-border bg-dark hover:bg-dark/80 transition-all duration-300 h-full">
                   <div className="relative overflow-hidden rounded-t-2xl">
                     <ImageFallback
                       src={article.image}
@@ -126,7 +126,7 @@ const BlogCarousel = ({ data }: BlogCarouselProps) => {
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     {article.featured && (
-                      <div className="absolute top-4 right-4 bg-gradient-to-r from-primary to-secondary text-white text-xs font-semibold px-3 py-1 rounded-full">
+                      <div className="absolute top-4 right-4 bg-white text-black text-xs font-semibold px-3 py-1 rounded-full">
                         Featured
                       </div>
                     )}
@@ -136,7 +136,7 @@ const BlogCarousel = ({ data }: BlogCarouselProps) => {
                   </div>
 
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold text-text mb-3 transition-colors duration-300 leading-tight">
+                    <h3 className="text-xl font-semibold text-text mb-3 transition-colors duration-300 leading-tight line-clamp-3">
                       {article.title}
                     </h3>
                     <p className="text-light text-sm mb-4 line-clamp-3">

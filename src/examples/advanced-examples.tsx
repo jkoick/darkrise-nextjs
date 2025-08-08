@@ -284,8 +284,8 @@ export const ComparisonPage = () => {
             <div className="lg:col-8 text-center">
               <h1 className="mb-4">How We Compare</h1>
               <p className="text-light text-lg mb-8">
-                Don&apos;t just take our word for it. See how we measure up against
-                the alternatives.
+                Don&apos;t just take our word for it. See how we measure up
+                against the alternatives.
               </p>
             </div>
           </div>

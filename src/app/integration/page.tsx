@@ -5,7 +5,6 @@ import IntegrationSection from "@/partials/IntegrationSection";
 import SeoMeta from "@/partials/SeoMeta";
 import { RegularPage } from "@/types";
 
-// for all regular pages
 const IntegrationPage = () => {
   const { title, description, meta_title, image }: RegularPage["frontmatter"] =
     getListPage(`integration/_index.md`).frontmatter;

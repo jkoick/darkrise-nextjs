@@ -1,6 +1,5 @@
 import { Post } from "@/types";
 
-// sort by date
 export const sortByDate = (array: Post[]) => {
   const sortedArray = array.sort(
     (a: any, b: any) =>
@@ -10,7 +9,6 @@ export const sortByDate = (array: Post[]) => {
   return sortedArray;
 };
 
-// sort product by weight
 export const sortByWeight = (array: any[]) => {
   const withWeight = array.filter(
     (item: { frontmatter: { weight: any } }) => item.frontmatter.weight,

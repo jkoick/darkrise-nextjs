@@ -6,10 +6,8 @@ import { Post } from "@/types";
 
 const { blog_folder } = config.settings;
 
-// remove dynamicParams
 export const dynamicParams = false;
 
-// generate static params
 export const generateStaticParams: () => { single: string }[] = () => {
   const posts: Post[] = getSinglePage(blog_folder);
 

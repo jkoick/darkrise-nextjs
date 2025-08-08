@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="flex justify-start">
             <Logo footerLogo={true} />
           </div>
-          
+
           {/* Company section */}
           <div>
             <h3 className="mb-6 text-base tracking-none text-white/50 text-left">
@@ -39,7 +39,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          
+
           {/* Product section */}
           <div>
             <h3 className="mb-6 text-base tracking-none text-white/50 text-left">
@@ -59,7 +59,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
+
         {/* Bottom section - Full width with copyright and footer links */}
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">

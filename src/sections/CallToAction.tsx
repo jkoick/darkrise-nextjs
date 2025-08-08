@@ -5,14 +5,18 @@ import { CallToActionData } from "@/data/content";
 
 interface CallToActionProps {
   data: CallToActionData;
-  variant?: 'default' | 'centered' | 'split';
+  variant?: "default" | "centered" | "split";
   className?: string;
 }
 
-const CallToAction = ({ data, variant = 'default', className = '' }: CallToActionProps) => {
+const CallToAction = ({
+  data,
+  variant = "default",
+  className = "",
+}: CallToActionProps) => {
   const { title, description, image, buttons } = data;
 
-  if (variant === 'centered') {
+  if (variant === "centered") {
     return (
       <section className={`section ${className}`}>
         <div className="container">
@@ -34,15 +38,23 @@ const CallToAction = ({ data, variant = 'default', className = '' }: CallToActio
                 />
               )}
               {buttons && buttons.length > 0 && (
-                <div className="flex flex-wrap justify-center gap-4" data-aos="fade-up-sm" data-aos-delay="200">
+                <div
+                  className="flex flex-wrap justify-center gap-4"
+                  data-aos="fade-up-sm"
+                  data-aos-delay="200"
+                >
                   {buttons
-                    .filter(button => button.enable)
+                    .filter((button) => button.enable)
                     .map((button, index) => (
                       <AnimatedAnchor
                         key={index}
-                        className={index === 0 ? "btn-primary" : "btn-outline-primary"}
+                        className={
+                          index === 0 ? "btn-primary" : "btn-outline-primary"
+                        }
                         link={button.link}
-                        target={button.link.startsWith("http") ? "_blank" : "_self"}
+                        target={
+                          button.link.startsWith("http") ? "_blank" : "_self"
+                        }
                         rel="noopener"
                         label={button.label}
                       />
@@ -50,7 +62,11 @@ const CallToAction = ({ data, variant = 'default', className = '' }: CallToActio
                 </div>
               )}
               {image && (
-                <div className="mt-12" data-aos="fade-up-sm" data-aos-delay="300">
+                <div
+                  className="mt-12"
+                  data-aos="fade-up-sm"
+                  data-aos-delay="300"
+                >
                   <ImageFallback
                     src={image.src}
                     alt={image.alt}
@@ -67,7 +83,7 @@ const CallToAction = ({ data, variant = 'default', className = '' }: CallToActio
     );
   }
 
-  if (variant === 'split') {
+  if (variant === "split") {
     return (
       <section className={`section ${className}`}>
         <div className="container">
@@ -89,15 +105,23 @@ const CallToAction = ({ data, variant = 'default', className = '' }: CallToActio
                 />
               )}
               {buttons && buttons.length > 0 && (
-                <div className="flex flex-wrap gap-4" data-aos="fade-right" data-aos-delay="200">
+                <div
+                  className="flex flex-wrap gap-4"
+                  data-aos="fade-right"
+                  data-aos-delay="200"
+                >
                   {buttons
-                    .filter(button => button.enable)
+                    .filter((button) => button.enable)
                     .map((button, index) => (
                       <AnimatedAnchor
                         key={index}
-                        className={index === 0 ? "btn-primary" : "btn-outline-primary"}
+                        className={
+                          index === 0 ? "btn-primary" : "btn-outline-primary"
+                        }
                         link={button.link}
-                        target={button.link.startsWith("http") ? "_blank" : "_self"}
+                        target={
+                          button.link.startsWith("http") ? "_blank" : "_self"
+                        }
                         rel="noopener"
                         label={button.label}
                       />
@@ -124,7 +148,6 @@ const CallToAction = ({ data, variant = 'default', className = '' }: CallToActio
     );
   }
 
-  // Default variant
   return (
     <section className={`section ${className}`}>
       <div className="container">
@@ -149,15 +172,23 @@ const CallToAction = ({ data, variant = 'default', className = '' }: CallToActio
             </div>
             {buttons && buttons.length > 0 && (
               <div className="lg:col-4 mt-6 lg:mt-0">
-                <div className="flex flex-wrap gap-4 lg:justify-end" data-aos="fade-up-sm" data-aos-delay="200">
+                <div
+                  className="flex flex-wrap gap-4 lg:justify-end"
+                  data-aos="fade-up-sm"
+                  data-aos-delay="200"
+                >
                   {buttons
-                    .filter(button => button.enable)
+                    .filter((button) => button.enable)
                     .map((button, index) => (
                       <AnimatedAnchor
                         key={index}
-                        className={index === 0 ? "btn-primary" : "btn-outline-primary"}
+                        className={
+                          index === 0 ? "btn-primary" : "btn-outline-primary"
+                        }
                         link={button.link}
-                        target={button.link.startsWith("http") ? "_blank" : "_self"}
+                        target={
+                          button.link.startsWith("http") ? "_blank" : "_self"
+                        }
                         rel="noopener"
                         label={button.label}
                       />

@@ -6,10 +6,8 @@ import SeoMeta from "@/partials/SeoMeta";
 import { RegularPage } from "@/types";
 import dayjs from "dayjs";
 
-// remove dynamicParams
 export const dynamicParams = false;
 
-// generate static params
 export const generateStaticParams = () => {
   const getRegularPages = getSinglePage("pages");
 
@@ -20,7 +18,6 @@ export const generateStaticParams = () => {
   return regularPages;
 };
 
-// for all regular pages
 const RegularPages = async (props: {
   params: Promise<{ regular: string }>;
 }) => {

@@ -1,4 +1,9 @@
-import { Hero, FeaturesCardLayout, Features as FeaturesSection, CallToAction } from "@/sections";
+import {
+  Hero,
+  FeaturesCardLayout,
+  Features as FeaturesSection,
+  CallToAction,
+} from "@/sections";
 import FeaturedTestimonial from "@/components/FeaturedTestimonial";
 import SeoMeta from "@/partials/SeoMeta";
 import {
@@ -6,7 +11,7 @@ import {
   featuresHeroContent,
   featuresCardLayoutContent,
   featuresContent,
-  callToAction1Content
+  callToAction1Content,
 } from "@/data/content";
 
 const FeaturesPage = () => {

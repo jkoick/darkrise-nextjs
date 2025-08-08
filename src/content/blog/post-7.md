@@ -5,7 +5,14 @@ image: "/images/blog/7.jpg"
 date: 2025-08-06T10:00:00Z
 draft: false
 authors: ["Admin"]
-tags: ["RPA", "Automation", "Manufacturing", "Digital Workers", "Process Optimization"]
+tags:
+  [
+    "RPA",
+    "Automation",
+    "Manufacturing",
+    "Digital Workers",
+    "Process Optimization",
+  ]
 ---
 
 Manufacturing companies across Slovakia and beyond are discovering the transformative power of Robotic Process Automation (RPA) through **getRPA**, an innovative automation platform developed by Uniteq Lab in Michalovce. This cutting-edge solution is revolutionizing how businesses approach routine tasks, operational efficiency, and competitive advantage in today's fast-paced industrial landscape.

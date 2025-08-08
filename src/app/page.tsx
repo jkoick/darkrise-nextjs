@@ -8,20 +8,22 @@ import SeoMeta from "@/partials/SeoMeta";
 import {
   homeBannerContent,
   customersLogoContent,
-  blogCarouselContent,
   featuresContent,
   featuresCardLayoutContent,
   integrationContent,
 } from "@/data/content";
+import { getFeaturedBlogCarouselContent } from "@/lib/utils/blogToFeaturedProducts";
 import CallToAction1 from "@/partials/CallToAction1";
 
 const Home = () => {
+  const dynamicBlogCarouselContent = getFeaturedBlogCarouselContent();
+
   return (
     <>
       <SeoMeta />
       <HomeBanner data={homeBannerContent} />
       <CustomersLogo data={customersLogoContent} />
-      <BlogCarousel data={blogCarouselContent} />
+      <BlogCarousel data={dynamicBlogCarouselContent} />
       <FeaturesStickyLayout data={featuresContent} />
       <FeaturesCardLayout data={featuresCardLayoutContent} />
       <Integration data={integrationContent} />

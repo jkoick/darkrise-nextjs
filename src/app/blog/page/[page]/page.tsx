@@ -9,10 +9,8 @@ import { Post, RegularPage } from "@/types";
 
 const { blog_folder, pagination } = config.settings;
 
-// remove dynamicParams
 export const dynamicParams = false;
 
-// generate static params
 export const generateStaticParams = () => {
   const allPost: Post[] = getSinglePage(blog_folder);
   const allSlug: string[] = allPost.map((item) => item.slug!);
@@ -28,7 +26,6 @@ export const generateStaticParams = () => {
   return paths;
 };
 
-// for all regular pages
 const Posts = async (props: { params: Promise<{ page: number }> }) => {
   const params = await props.params;
   const postIndex: RegularPage = getListPage(`${blog_folder}/_index.md`);

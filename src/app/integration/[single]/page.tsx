@@ -4,10 +4,8 @@ import IntegrationSingle from "@/partials/IntegrationSingle";
 import SeoMeta from "@/partials/SeoMeta";
 import { Integration } from "@/types";
 
-// remove dynamicParams
 export const dynamicParams = false;
 
-// generate static params
 export const generateStaticParams: () => { single: string }[] = () => {
   const integrations = getSinglePage("integration");
 

@@ -5,7 +5,6 @@ import {
   aboutBannerContent,
   valuesContent,
   teamContent,
-  careerCtaContent,
   callToAction1Content,
 } from "@/data/content";
 
@@ -16,7 +15,6 @@ const About = () => {
       <HomeBanner data={aboutBannerContent} />
       <Values data={valuesContent} />
       <Team data={teamContent} />
-      <CallToAction data={careerCtaContent} variant="centered" />
       <CallToAction data={callToAction1Content} variant="default" />
     </>
   );

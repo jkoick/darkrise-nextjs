@@ -206,13 +206,12 @@ const IntegrationSection = ({
                     aria-hidden="true"
                   >
                     {firstList.map((item, i: number) => (
-                        <IntegrationCard
-                          key={`${item.name}-${i}`}
-                          image={item.icon}
-                          name={item.name}
-                        />
-                      ),
-                    )}
+                      <IntegrationCard
+                        key={`${item.name}-${i}`}
+                        image={item.icon}
+                        name={item.name}
+                      />
+                    ))}
                   </div>
                 </div>
                 <div className="marquee-wrapper mt-5 flex gap-5 overflow-hidden">

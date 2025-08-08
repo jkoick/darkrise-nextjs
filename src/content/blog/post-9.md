@@ -4,6 +4,8 @@ meta_title: ""
 description: "Discover SmartCut, an intelligent visual system that uses AI and computer vision to automatically measure, classify, and manage production waste, reducing material waste by 15-30 percent."
 date: 2025-08-04T12:00:00Z
 image: "/images/blog/9.jpg"
+tags: ["AI", "Manufacturing", "Sustainability", "Computer Vision", "Waste Management"]
+featured: true
 draft: false
 ---
 

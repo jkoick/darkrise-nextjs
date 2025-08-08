@@ -23,15 +23,15 @@ interface ComparisonTableProps {
   features: ComparisonFeature[];
 }
 
-const ComparisonTable = ({ 
-  title, 
-  description, 
-  ourProduct, 
-  competitors, 
-  features 
+const ComparisonTable = ({
+  title,
+  description,
+  ourProduct,
+  competitors,
+  features,
 }: ComparisonTableProps) => {
   const renderValue = (value: boolean | string) => {
-    if (typeof value === 'boolean') {
+    if (typeof value === "boolean") {
       return value ? (
         <ImageFallback
           src="/images/icons/svg/check.svg"
@@ -60,14 +60,17 @@ const ComparisonTable = ({
           <div className="lg:col-8 text-center">
             <h2 className="mb-4" dangerouslySetInnerHTML={markdownify(title)} />
             {description && (
-              <p className="mb-12 text-light" dangerouslySetInnerHTML={markdownify(description)} />
+              <p
+                className="mb-12 text-light"
+                dangerouslySetInnerHTML={markdownify(description)}
+              />
             )}
           </div>
         </div>
 
         <div className="row justify-center">
           <div className="lg:col-10">
-            <div 
+            <div
               className="comparison-table overflow-hidden rounded-2xl border border-white/10"
               data-aos="fade-up-sm"
             >
@@ -76,16 +79,23 @@ const ComparisonTable = ({
                 <div className="p-4 border-b border-white/10">
                   <h3 className="font-semibold">Features</h3>
                 </div>
-                <div className={`p-4 border-b border-white/10 text-center ${
-                  ourProduct.highlight ? 'bg-primary/20 border-primary/50' : ''
-                }`}>
+                <div
+                  className={`p-4 border-b border-white/10 text-center ${
+                    ourProduct.highlight
+                      ? "bg-primary/20 border-primary/50"
+                      : ""
+                  }`}
+                >
                   <h3 className="font-semibold">{ourProduct.name}</h3>
                   {ourProduct.highlight && (
                     <span className="text-xs text-primary">Recommended</span>
                   )}
                 </div>
                 {competitors.map((competitor, index) => (
-                  <div key={index} className="p-4 border-b border-white/10 text-center">
+                  <div
+                    key={index}
+                    className="p-4 border-b border-white/10 text-center"
+                  >
                     {competitor.logo ? (
                       <ImageFallback
                         src={competitor.logo}
@@ -95,7 +105,9 @@ const ComparisonTable = ({
                         className="mx-auto mb-1"
                       />
                     ) : (
-                      <h3 className="font-semibold text-sm">{competitor.name}</h3>
+                      <h3 className="font-semibold text-sm">
+                        {competitor.name}
+                      </h3>
                     )}
                   </div>
                 ))}
@@ -103,9 +115,9 @@ const ComparisonTable = ({
 
               {/* Features */}
               {features.map((feature, index) => (
-                <div 
-                  key={index} 
-                  className={`grid grid-cols-4 ${index % 2 === 0 ? 'bg-white/2' : ''}`}
+                <div
+                  key={index}
+                  className={`grid grid-cols-4 ${index % 2 === 0 ? "bg-white/2" : ""}`}
                 >
                   <div className="p-4 border-b border-white/10">
                     <div>
@@ -117,9 +129,11 @@ const ComparisonTable = ({
                       )}
                     </div>
                   </div>
-                  <div className={`p-4 border-b border-white/10 text-center ${
-                    ourProduct.highlight ? 'bg-primary/10' : ''
-                  }`}>
+                  <div
+                    className={`p-4 border-b border-white/10 text-center ${
+                      ourProduct.highlight ? "bg-primary/10" : ""
+                    }`}
+                  >
                     {renderValue(feature.us)}
                   </div>
                   <div className="p-4 border-b border-white/10 text-center">

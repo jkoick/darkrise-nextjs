@@ -9,7 +9,10 @@ interface FeaturesStickyLayoutProps {
   sticky?: boolean;
 }
 
-const FeaturesStickyLayout = ({ data, sticky = true }: FeaturesStickyLayoutProps) => {
+const FeaturesStickyLayout = ({
+  data,
+  sticky = true,
+}: FeaturesStickyLayoutProps) => {
   return (
     <section className="section">
       <div className="container">
@@ -50,7 +53,9 @@ const FeaturesStickyLayout = ({ data, sticky = true }: FeaturesStickyLayoutProps
                               icon="FaCheck"
                               className="text-yellow-200 -mt-px inline-block mr-2.5 text-base"
                             />
-                            <span dangerouslySetInnerHTML={markdownify(listItem)} />
+                            <span
+                              dangerouslySetInnerHTML={markdownify(listItem)}
+                            />
                           </li>
                         ))}
                       </ul>

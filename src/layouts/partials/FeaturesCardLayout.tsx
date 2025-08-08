@@ -2,11 +2,7 @@ import ImageFallback from "@/helpers/ImageFallback";
 import { featuresCardLayoutContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 
-const FeaturesCardLayout = ({
-  features,
-}: {
-  features?: any;
-}) => {
+const FeaturesCardLayout = ({ features }: { features?: any }) => {
   let { title, description, features: list } = featuresCardLayoutContent;
 
   // Override title & description if features is passed in

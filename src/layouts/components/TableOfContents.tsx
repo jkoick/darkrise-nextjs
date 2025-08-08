@@ -46,20 +46,28 @@ const TableOfContents = ({
       threshold: [0, 0.25, 0.5, 0.75, 1],
     };
 
-    const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
-      const intersectingEntries = entries.filter(entry => entry.isIntersecting);
-      
-      if (intersectingEntries.length > 0) {
-        const mostVisibleEntry = intersectingEntries.reduce((prev, current) => 
-          current.intersectionRatio > prev.intersectionRatio ? current : prev
+    const observer = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        const intersectingEntries = entries.filter(
+          (entry) => entry.isIntersecting,
         );
-        
-        const target = mostVisibleEntry.target as HTMLElement;
-        if (target?.id) {
-          setActiveId(target.id);
+
+        if (intersectingEntries.length > 0) {
+          const mostVisibleEntry = intersectingEntries.reduce(
+            (prev, current) =>
+              current.intersectionRatio > prev.intersectionRatio
+                ? current
+                : prev,
+          );
+
+          const target = mostVisibleEntry.target as HTMLElement;
+          if (target?.id) {
+            setActiveId(target.id);
+          }
         }
-      }
-    }, observerOptions);
+      },
+      observerOptions,
+    );
 
     headings.forEach((heading) => observer.observe(heading));
 

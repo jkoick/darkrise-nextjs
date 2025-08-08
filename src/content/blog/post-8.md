@@ -4,6 +4,8 @@ meta_title: ""
 description: "Discover iForms, an intelligent digital form management platform that eliminates paper-based processes and streamlines organizational workflows with drag-and-drop form creation, advanced reporting, and seamless integration capabilities."
 date: 2024-08-05T14:00:00Z
 image: "/images/blog/8.jpg"
+tags: ["Digital Forms", "Workflow", "Enterprise", "Automation", "Data Management"]
+featured: true
 draft: false
 ---
 

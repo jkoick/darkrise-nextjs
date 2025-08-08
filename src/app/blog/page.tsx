@@ -7,7 +7,6 @@ import SeoMeta from "@/partials/SeoMeta";
 import { RegularPage } from "@/types";
 const { blog_folder } = config.settings;
 
-// for all regular pages
 const Posts = () => {
   const postIndex: RegularPage = getListPage(`${blog_folder}/_index.md`);
 

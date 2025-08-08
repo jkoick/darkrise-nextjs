@@ -70,7 +70,10 @@ const BlogSingle = ({ post }: { post: Post }) => {
                 <TableOfContents desktopOnly />
               </div>
             </div>
-            <article data-aos="fade-up-sm" className="lg:col-span-6 lg:col-start-4">
+            <article
+              data-aos="fade-up-sm"
+              className="lg:col-span-6 lg:col-start-4"
+            >
               <div className="content prose-lg max-w-none">
                 <MDXContent content={post.content} />
               </div>
