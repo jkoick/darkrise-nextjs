@@ -269,4 +269,4 @@ The platform's ability to integrate seamlessly with existing systems while provi
 
 ---
 
-_Ready to transform your manufacturing operations with intelligent automation? Contact getRPA at +421 917 816 124 or jan.ohriska@uniteqlab.com to discover how digital workers can revolutionize your business processes._
+_Ready to transform your manufacturing operations with intelligent automation? Contact getRPA to discover how digital workers can revolutionize your business processes._
