@@ -1,4 +1,3 @@
-import ImageFallback from "@/helpers/ImageFallback";
 import { testimonialContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 
@@ -36,7 +35,7 @@ const FeaturedTestimonial = ({
             <div className="row gy-4 items-center">
               <div className="lg:col-5">
                 <div className="relative overflow-hidden rounded-lg bg-dark lg:me-8 transition-transform duration-300 hover:scale-105">
-                  <ImageFallback
+                  <img
                     src={featuredTestimonial.customer.avatar || ""}
                     alt={featuredTestimonial.customer.name || "customer name"}
                     width={500}

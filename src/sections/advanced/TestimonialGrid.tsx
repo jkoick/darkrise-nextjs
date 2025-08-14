@@ -1,4 +1,3 @@
-import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
 
 interface Testimonial {
@@ -90,7 +89,7 @@ const TestimonialGrid = ({
                 </blockquote>
 
                 <div className="flex items-center gap-3">
-                  <ImageFallback
+                  <img
                     src={testimonial.author.avatar}
                     alt={testimonial.author.name}
                     width={48}

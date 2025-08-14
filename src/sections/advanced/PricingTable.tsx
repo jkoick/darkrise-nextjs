@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import AnimatedAnchor from "@/layouts/components/AnimatedAnchor";
-import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
 
 interface PricingPlan {
@@ -138,7 +137,7 @@ const PricingTable = ({
                       key={featureIndex}
                       className="flex items-center gap-2 text-sm"
                     >
-                      <ImageFallback
+                      <img
                         src="/images/icons/svg/check.svg"
                         alt="Check"
                         width={16}

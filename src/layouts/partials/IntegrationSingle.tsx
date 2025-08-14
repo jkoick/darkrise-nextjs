@@ -1,5 +1,4 @@
 import AnimatedAnchor from "@/components/AnimatedAnchor";
-import ImageFallback from "@/helpers/ImageFallback";
 import MDXContent from "@/helpers/MDXContent";
 import { markdownify } from "@/lib/utils/textConverter";
 import { Integration } from "@/types";
@@ -21,7 +20,7 @@ const IntegrationSingle = ({ integration }: { integration: Integration }) => {
             <div className="relative min-h-full overflow-hidden rounded-lg border border-white/5 bg-dark p-9">
               <div className="mb-6 flex items-center gap-4">
                 {image && (
-                  <ImageFallback
+                  <img
                     className="h-[70px] w-[70px] object-cover"
                     src={image}
                     alt={`icon related to ${title}`}

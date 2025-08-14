@@ -1,6 +1,5 @@
 import { TeamData } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
-import ImageFallback from "@/helpers/ImageFallback";
 
 interface TeamProps {
   data: TeamData;
@@ -41,7 +40,7 @@ const Team = ({ data }: TeamProps) => {
                   <div className="team-card text-center">
                     <div className="mb-6">
                       <div className="h-32 w-32 mx-auto overflow-hidden rounded-full">
-                        <ImageFallback
+                        <img
                           src={member.image}
                           alt={member.name}
                           className="h-full w-full object-cover rounded-full"
@@ -64,7 +63,7 @@ const Team = ({ data }: TeamProps) => {
                               rel="noopener noreferrer"
                               className="flex h-12 w-12 items-center justify-center rounded-md bg-gradient-to-b from-white/10 to-slate-800/25 transition-all duration-300"
                             >
-                              <ImageFallback
+                              <img
                                 src={social.icon}
                                 alt={social.platform}
                                 className="h-4 w-4 object-cover"

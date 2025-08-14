@@ -1,6 +1,5 @@
 import { teamContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
-import ImageFallback from "@/helpers/ImageFallback";
 import React from "react";
 
 const OurTeam = () => {
@@ -34,7 +33,7 @@ const OurTeam = () => {
                   <div className="team-card text-center">
                     <div className="mb-4">
                       <div className="h-20 w-20 mx-auto overflow-hidden rounded-full">
-                        <ImageFallback
+                        <img
                           src={member.image}
                           alt={member.name}
                           className="h-full w-full object-cover rounded-full"
@@ -55,7 +54,7 @@ const OurTeam = () => {
                               rel="noopener noreferrer"
                               className="flex h-12 w-12 items-center justify-center rounded-md bg-gradient-to-b from-white/10 to-slate-800/25 transition-all duration-300 hover:scale-y-[-1]"
                             >
-                              <ImageFallback
+                              <img
                                 src={social.icon}
                                 alt={social.platform}
                                 className="h-4 w-4 object-cover"

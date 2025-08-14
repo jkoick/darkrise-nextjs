@@ -1,5 +1,4 @@
 import AnimatedAnchor from "@/layouts/components/AnimatedAnchor";
-import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
 import { HomeBannerData } from "@/data/content";
 
@@ -82,7 +81,7 @@ const HomeBanner = ({ data }: HomeBannerProps) => {
               data-aos-delay="400"
             >
               <div className="relative">
-                <ImageFallback
+                <img
                   src={image.src}
                   alt={image.alt}
                   width={1300}

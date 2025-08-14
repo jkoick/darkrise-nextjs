@@ -1,7 +1,6 @@
 "use client";
 
 import AnimatedAnchor from "@/components/AnimatedAnchor";
-import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
 import { BlogCarouselData } from "@/data/content";
 import { useRef } from "react";
@@ -118,7 +117,7 @@ const BlogCarousel = ({ data }: BlogCarouselProps) => {
               >
                 <div className="group relative overflow-hidden rounded-2xl border border-border bg-dark hover:bg-dark/80 transition-all duration-300 h-full">
                   <div className="relative overflow-hidden rounded-t-2xl">
-                    <ImageFallback
+                    <img
                       src={article.image}
                       alt={article.title}
                       width={320}

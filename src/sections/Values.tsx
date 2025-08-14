@@ -1,4 +1,3 @@
-import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
 import { ValuesData } from "@/data/content";
 
@@ -43,7 +42,7 @@ const Values = ({ data }: ValuesProps) => {
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
-                      <ImageFallback
+                      <img
                         src={value.icon}
                         alt={value.title}
                         width={40}

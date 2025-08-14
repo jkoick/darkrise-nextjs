@@ -1,5 +1,4 @@
 import AnimatedAnchor from "@/components/AnimatedAnchor";
-import ImageFallback from "@/helpers/ImageFallback";
 import { pricingCompareContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 import React from "react";
@@ -118,14 +117,14 @@ const PricingCompare = ({ largeHeading }: { largeHeading?: boolean }) => {
                                   <div className="col flex items-center justify-center border-b border-border lg:col-4">
                                     <div className="px-3 py-3 text-[10px] sm:py-6 sm:text-base">
                                       {item.basic === true ? (
-                                        <ImageFallback
+                                        <img
                                           src="/images/icons/svg/check.svg"
                                           alt="icon"
                                           width={24}
                                           height={24}
                                         />
                                       ) : item.basic === false ? (
-                                        <ImageFallback
+                                        <img
                                           src="/images/icons/svg/cross.svg"
                                           alt="icon"
                                           width={16}
@@ -141,14 +140,14 @@ const PricingCompare = ({ largeHeading }: { largeHeading?: boolean }) => {
                                   <div className="col flex items-center justify-center border border-t-0 border-border lg:col-4 lg:border-white/5 lg:bg-dark/50">
                                     <div className="px-3 py-3 text-[10px] sm:py-6 sm:text-base">
                                       {item.standard === true ? (
-                                        <ImageFallback
+                                        <img
                                           src="/images/icons/svg/check.svg"
                                           alt="icon"
                                           width={24}
                                           height={24}
                                         />
                                       ) : item.standard === false ? (
-                                        <ImageFallback
+                                        <img
                                           src="/images/icons/svg/cross.svg"
                                           alt="icon"
                                           width={16}
@@ -164,14 +163,14 @@ const PricingCompare = ({ largeHeading }: { largeHeading?: boolean }) => {
                                   <div className="col flex items-center justify-center border-b border-border lg:col-4">
                                     <div className="px-3 py-3 text-[10px] sm:py-6 sm:text-base">
                                       {item.pro === true ? (
-                                        <ImageFallback
+                                        <img
                                           src="/images/icons/svg/check.svg"
                                           alt="icon"
                                           width={24}
                                           height={24}
                                         />
                                       ) : item.pro === false ? (
-                                        <ImageFallback
+                                        <img
                                           src="/images/icons/svg/cross.svg"
                                           alt="icon"
                                           width={16}

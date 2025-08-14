@@ -4,7 +4,6 @@ import AnimatedAnchor from "@/components/AnimatedAnchor";
 import Logo from "@/components/Logo";
 import config from "@/config/config.json";
 import menu from "@/config/menu.json";
-import ImageFallback from "@/helpers/ImageFallback";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -261,10 +260,10 @@ const Header = () => {
       {/* Background Pattern Image Show Only Home & Changelog Page - Hidden on mobile for better readability */}
       {(pathname === "/" || pathname.startsWith("/changelog")) && (
         <div aria-hidden="true" className="hidden md:block">
-          <ImageFallback
+          <img
             className="pointer-events-none absolute inset-x-0 top-[80%] -z-10 w-full -translate-y-2/4 object-cover p-0 md:top-[95%]"
-            src={"/images/uniteq-banner3.png"}
-            loading={"eager"}
+            src="/images/uniteq-banner3.png"
+            loading="eager"
             alt="banner bg image"
             width={2048}
             height={2048}

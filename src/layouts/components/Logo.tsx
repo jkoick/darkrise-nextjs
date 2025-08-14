@@ -1,7 +1,6 @@
 "use client";
 
 import config from "@/config/config.json";
-import ImageFallback from "@/helpers/ImageFallback";
 import Link from "next/link";
 
 const Logo = ({
@@ -43,7 +42,7 @@ const Logo = ({
       {src || logo || logo_footer ? (
         <>
           {footerLogo ? (
-            <ImageFallback
+            <img
               src={logo_footer ? logo_footer : src || "/images/logo.svg"}
               className={`inline-block ${style ? style : ""}`}
               width={parseInt(logo_footer_width.replace("px", "")) * 2}
@@ -55,7 +54,7 @@ const Logo = ({
               }}
             />
           ) : (
-            <ImageFallback
+            <img
               src={src ? src : logo}
               className={`inline-block ${style ? style : ""}`}
               width={parseInt(logo_width.replace("px", "")) * 2}

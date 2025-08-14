@@ -1,5 +1,4 @@
 import config from "@/config/config.json";
-import ImageFallback from "@/helpers/ImageFallback";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
 import { RegularPage } from "@/types";
@@ -36,7 +35,7 @@ const ContactFormSection = () => {
                       <div key={i} className="flex gap-4">
                         {point.icon && (
                           <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-b from-white/10 to-slate-800/25">
-                            <ImageFallback
+                            <img
                               className="h-5 w-5"
                               src={point.icon}
                               alt={`icon related to ${point.title}`}

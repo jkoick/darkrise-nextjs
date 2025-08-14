@@ -1,4 +1,3 @@
-import ImageFallback from "@/helpers/ImageFallback";
 import { featuresGridContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 
@@ -63,7 +62,7 @@ const FeaturesGrid = ({ largeHeading }: { largeHeading?: boolean }) => {
                     {index === 0 && item.images ? (
                       <div className="mb-20 lg:mb-36 flex items-center justify-center gap-10">
                         {item.images.map((item, i) => (
-                          <ImageFallback
+                          <img
                             key={i}
                             className={`${i === 1 ? "w-24 md:w-36" : "w-16 md:w-28"}`}
                             src={item}
@@ -76,7 +75,7 @@ const FeaturesGrid = ({ largeHeading }: { largeHeading?: boolean }) => {
                     ) : index === 1 && item.images ? (
                       <div className="relative lg:-mb-8 w-full max-w-[420px] mt-40 mx-auto">
                         {item.images.slice(0, 2).map((item, i) => (
-                          <ImageFallback
+                          <img
                             key={i}
                             className={`absolute inset-x-0 mx-auto block ${i === 0 ? "bottom-[10%] z-0 w-[80%]" : index === 1 ? "bottom-[-5%] z-10 w-[90%]" : "w-full"}`}
                             src={item}
@@ -85,7 +84,7 @@ const FeaturesGrid = ({ largeHeading }: { largeHeading?: boolean }) => {
                             height={i === 0 ? 320 : 400}
                           />
                         ))}
-                        <ImageFallback
+                        <img
                           className={`relative z-30 w-full`}
                           src={item.images[2]}
                           alt={`user image`}
@@ -97,7 +96,7 @@ const FeaturesGrid = ({ largeHeading }: { largeHeading?: boolean }) => {
                       index === 2 && (
                         <div className="relative w-full max-w-[420px] mt-10 mx-auto">
                           {item.tools_bg && (
-                            <ImageFallback
+                            <img
                               className={`relative z-0 w-full pl-4`}
                               src={item.tools_bg}
                               alt={`user image`}
@@ -123,7 +122,7 @@ const FeaturesGrid = ({ largeHeading }: { largeHeading?: boolean }) => {
                                   key={i}
                                   className={`absolute z-10 ${classes[i] || ""}`}
                                 >
-                                  <ImageFallback
+                                  <img
                                     className={`w-full h-full`}
                                     src={item}
                                     alt={`user image`}

@@ -1,5 +1,4 @@
 import config from "@/config/config.json";
-import ImageFallback from "@/helpers/ImageFallback";
 import dateFormat from "@/lib/utils/dateFormat";
 import { markdownify, plainify } from "@/lib/utils/textConverter";
 import AnimatedAnchor from "./AnimatedAnchor";
@@ -32,7 +31,7 @@ const BlogCard = ({
             )}
           </div>
           <div>
-            <ImageFallback
+            <img
               className="mt-10 w-full rounded-2xl"
               src={image}
               alt={title}
@@ -63,7 +62,7 @@ const BlogCard = ({
         </div>
       ) : (
         <div className="flex flex-col items-center gap-10 rounded-lg border border-border bg-dark px-8 py-7 md:flex-row lg:px-16 lg:py-14">
-          <ImageFallback
+          <img
             className="w-full rounded-xl md:w-[200px]"
             src={image}
             alt={title}

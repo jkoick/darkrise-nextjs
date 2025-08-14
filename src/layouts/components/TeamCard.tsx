@@ -1,5 +1,4 @@
 import DynamicIcon from "@/helpers/DynamicIcon";
-import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
 import { Team } from "@/types";
 
@@ -9,7 +8,7 @@ const TeamCard = ({ data }: { data: Team }) => {
   return (
     <div className={` min-h-full ${(style && style) || ""}`}>
       <div className="h-20 w-20 overflow-hidden rounded-full">
-        <ImageFallback
+        <img
           src={avatar}
           className="rounded-full"
           alt={name || "avatar of team member"}
@@ -49,7 +48,7 @@ const TeamCard = ({ data }: { data: Team }) => {
                 <span className="sr-only">{social.name}</span>
                 {social.icon.startsWith("/images/") ? (
                   <div className="relative flex h-12 w-12 items-center justify-center after:absolute after:inset-0 after:rounded-md after:bg-gradient-to-b after:from-white/10 after:to-slate-800/25 after:transition-all after:duration-300 after:content-[''] hover:after:scale-y-[-1]">
-                    <ImageFallback
+                    <img
                       className="h-4 w-4 object-cover"
                       src={social.icon}
                       alt={`icon related to ${social.name}`}

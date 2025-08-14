@@ -1,4 +1,3 @@
-import ImageFallback from "@/helpers/ImageFallback";
 import { aboutBannerContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 
@@ -35,7 +34,7 @@ const AboutBanner = () => {
             data-aos-delay="200"
           >
             {image && (
-              <ImageFallback
+              <img
                 className="h-[300px] min-h-full w-full rounded-lg object-cover md:h-[700px] md:rounded-3xl"
                 src={image.src}
                 alt={image.alt}

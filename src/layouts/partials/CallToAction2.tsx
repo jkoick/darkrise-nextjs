@@ -1,5 +1,4 @@
 import AnimatedAnchor from "@/components/AnimatedAnchor";
-import ImageFallback from "@/helpers/ImageFallback";
 import { callToAction2Content } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 
@@ -14,7 +13,7 @@ const CallToAction2 = () => {
             <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-dark py-40 group">
               <div aria-hidden="true">
                 <div className="absolute inset-0 z-5 bg-black/40 backdrop-blur-[0.5px]"></div>
-                <ImageFallback
+                <img
                   className="absolute rotate-y-180 object-cover bottom-0 z-0 h-full w-full"
                   src={bg_image}
                   alt="background pattern image"
@@ -30,7 +29,7 @@ const CallToAction2 = () => {
                 <div className="absolute left-[9%] top-[12%] w-fit">
                   {list && list[0] && list[0].image ? (
                     <div className="ml-1 h-12 w-12 overflow-hidden md:h-20 md:w-20">
-                      <ImageFallback
+                      <img
                         src={list[0].image}
                         className="h-full w-full object-cover"
                         alt="user image"
@@ -43,7 +42,7 @@ const CallToAction2 = () => {
                     list[0].icon && (
                       <div className="relative z-10 -mt-4 ml-0 h-12 w-12 overflow-hidden rounded-full via-inherit p-px after:absolute after:inset-0 after:-z-10 after:from-white/10 after:to-white/40 after:content-[''] after:bg-gradient-to-br md:h-20 md:w-20">
                         <div className="flex h-full w-full items-center justify-center rounded-full bg-dark object-cover">
-                          <ImageFallback
+                          <img
                             src={list[0].icon}
                             className="h-1/2 w-1/2"
                             alt="user image"
@@ -55,7 +54,7 @@ const CallToAction2 = () => {
                     )
                   )}
 
-                  <ImageFallback
+                  <img
                     src="/images/call-to-action/pattern-1.png"
                     className="max-md:w-40"
                     alt="icon"
@@ -67,7 +66,7 @@ const CallToAction2 = () => {
                 <div className="absolute -top-2 left-[38%] w-fit pl-2">
                   {list && list[1] && list[1].image ? (
                     <div className="h-12 w-12 overflow-hidden md:h-16 md:w-16">
-                      <ImageFallback
+                      <img
                         src={list[1].image}
                         className="h-full w-full object-cover"
                         alt="user image"
@@ -80,7 +79,7 @@ const CallToAction2 = () => {
                     list[1].icon && (
                       <div className="relative z-10 -mt-4 ml-0 h-12 w-12 overflow-hidden rounded-full via-inherit p-px after:absolute after:inset-0 after:-z-10 after:from-white/10 after:to-white/40 after:content-[''] after:bg-gradient-to-br md:h-20 md:w-20">
                         <div className="flex h-full w-full items-center justify-center rounded-full bg-dark object-cover">
-                          <ImageFallback
+                          <img
                             src={list[1].icon}
                             className="h-1/2 w-1/2"
                             alt="user image"
@@ -91,7 +90,7 @@ const CallToAction2 = () => {
                       </div>
                     )
                   )}
-                  <ImageFallback
+                  <img
                     src="/images/call-to-action/pattern-2.png"
                     className="max-md:w-24"
                     alt="icon"
@@ -101,7 +100,7 @@ const CallToAction2 = () => {
                 </div>
                 {/* Icon 03 */}
                 <div className="absolute right-[12%] top-[10%] flex w-fit items-center">
-                  <ImageFallback
+                  <img
                     src="/images/call-to-action/pattern-3.png"
                     className="max-md:w-40"
                     alt="icon"
@@ -110,7 +109,7 @@ const CallToAction2 = () => {
                   />
                   {list && list[2] && list[2].image ? (
                     <div className="h-12 w-12 overflow-hidden md:h-20 md:w-20">
-                      <ImageFallback
+                      <img
                         src={list[2].image}
                         className="h-full w-full object-cover"
                         alt="user image"
@@ -123,7 +122,7 @@ const CallToAction2 = () => {
                     list[2].icon && (
                       <div className="relative z-10 -mt-4 ml-0 h-12 w-12 overflow-hidden rounded-full via-inherit p-px after:absolute after:inset-0 after:-z-10 after:from-white/10 after:to-white/40 after:content-[''] after:bg-gradient-to-br md:h-20 md:w-20">
                         <div className="flex h-full w-full items-center justify-center rounded-full bg-dark object-cover">
-                          <ImageFallback
+                          <img
                             src={list[2].icon}
                             className="h-1/2 w-1/2"
                             alt="user image"
@@ -137,7 +136,7 @@ const CallToAction2 = () => {
                 </div>
                 {/* User Image 04 */}
                 <div className="absolute right-[9%] top-[70%] w-fit md:top-[48%]">
-                  <ImageFallback
+                  <img
                     src="/images/call-to-action/pattern-4.png"
                     className="max-md:w-40"
                     alt="icon"
@@ -146,7 +145,7 @@ const CallToAction2 = () => {
                   />
                   {list && list[3] && list[3].image ? (
                     <div className="ml-auto h-12 w-12 overflow-hidden md:h-16 md:w-16">
-                      <ImageFallback
+                      <img
                         src={list[3].image}
                         className="h-full w-full object-cover"
                         alt="user image"
@@ -159,7 +158,7 @@ const CallToAction2 = () => {
                     list[3].icon && (
                       <div className="relative z-10 -mt-4 ml-auto h-12 w-12 overflow-hidden rounded-full via-inherit p-px after:absolute after:inset-0 after:-z-10 after:from-white/10 after:to-white/40 after:content-[''] after:bg-gradient-to-br md:h-16 md:w-16">
                         <div className="flex h-full w-full items-center justify-center rounded-full bg-dark object-cover">
-                          <ImageFallback
+                          <img
                             src={list[3].icon}
                             className="h-1/2 w-1/2"
                             alt="user image"
@@ -173,7 +172,7 @@ const CallToAction2 = () => {
                 </div>
                 {/* Icon 05 */}
                 <div className="absolute bottom-[-3%] right-[28%]">
-                  <ImageFallback
+                  <img
                     src="/images/call-to-action/pattern-5.png"
                     className="max-md:w-40"
                     alt="icon"
@@ -182,7 +181,7 @@ const CallToAction2 = () => {
                   />
                   {list && list[4] && list[4].image ? (
                     <div className="ml-auto h-12 w-12 overflow-hidden md:h-16 md:w-16">
-                      <ImageFallback
+                      <img
                         src={list[4].image}
                         className="h-full w-full object-cover"
                         alt="user image"
@@ -195,7 +194,7 @@ const CallToAction2 = () => {
                     list[4].icon && (
                       <div className="relative z-10 -mt-4 ml-auto h-12 w-12 overflow-hidden rounded-full via-inherit p-px after:absolute after:inset-0 after:-z-10 after:from-white/10 after:to-white/40 after:content-[''] after:bg-gradient-to-br md:h-16 md:w-16">
                         <div className="flex h-full w-full items-center justify-center rounded-full bg-dark object-cover">
-                          <ImageFallback
+                          <img
                             src={list[4].icon}
                             className="h-1/2 w-1/2"
                             alt="user image"
@@ -211,7 +210,7 @@ const CallToAction2 = () => {
                 <div className="absolute bottom-[2%] left-[14%] flex items-center">
                   {list && list[5] && list[5].image ? (
                     <div className="ml-auto h-12 w-12 overflow-hidden md:h-20 md:w-20">
-                      <ImageFallback
+                      <img
                         src={list[5].image}
                         className="h-full w-full object-cover"
                         alt="user image"
@@ -224,7 +223,7 @@ const CallToAction2 = () => {
                     list[5].icon && (
                       <div className="relative z-10 -mt-4 ml-auto h-12 w-12 overflow-hidden rounded-full via-inherit p-px after:absolute after:inset-0 after:-z-10 after:from-white/10 after:to-white/40 after:content-[''] after:bg-gradient-to-br md:h-20 md:w-20">
                         <div className="flex h-full w-full items-center justify-center rounded-full bg-dark object-cover">
-                          <ImageFallback
+                          <img
                             src={list[5].icon}
                             className="h-1/2 w-1/2"
                             alt="user image"
@@ -235,7 +234,7 @@ const CallToAction2 = () => {
                       </div>
                     )
                   )}
-                  <ImageFallback
+                  <img
                     src="/images/call-to-action/pattern-6.png"
                     className="mb-10 max-md:w-40"
                     alt="icon"

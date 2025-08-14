@@ -1,7 +1,6 @@
 import ReadingProgress from "@/components/ReadingProgress";
 import RelatedPosts from "@/components/RelatedPosts";
 import TableOfContents from "@/components/TableOfContents";
-import ImageFallback from "@/helpers/ImageFallback";
 import MDXContent from "@/helpers/MDXContent";
 import dateFormat from "@/lib/utils/dateFormat";
 import { plainify } from "@/lib/utils/textConverter";
@@ -51,13 +50,12 @@ const BlogSingle = ({ post }: { post: Post }) => {
           {image && (
             <div className="mb-16" data-aos="fade-up-sm" data-aos-delay="200">
               <div className="relative overflow-hidden rounded-2xl">
-                <ImageFallback
+                <img
                   src={image}
                   height={600}
                   width={1200}
                   alt={title}
                   className="h-auto w-full object-cover md:h-[600px]"
-                  format="webp"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/20 via-transparent to-transparent" />
               </div>

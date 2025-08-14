@@ -1,5 +1,4 @@
 import AnimatedAnchor from "@/components/AnimatedAnchor";
-import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
 import { homeBannerContent } from "@/data/content";
 
@@ -16,7 +15,7 @@ const HomeBanner = () => {
                 className="border-animation mx-auto mb-4 w-fit rounded-full p-px relative"
               >
                 <div className="border-animation-inner flex gap-2 rounded-full border border-white/15 px-3 py-1.5">
-                  <ImageFallback
+                  <img
                     width={24}
                     height={24}
                     src="/images/icons/svg/award.svg"
@@ -96,7 +95,7 @@ const HomeBanner = () => {
             >
               <div className="max-h-[825px] h-[825px]">
                 {image && (
-                  <ImageFallback
+                  <img
                     src={image.src}
                     alt={image.alt}
                     width={1300}

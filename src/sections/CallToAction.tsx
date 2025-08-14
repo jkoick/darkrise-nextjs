@@ -1,5 +1,4 @@
 import AnimatedAnchor from "@/layouts/components/AnimatedAnchor";
-import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
 import { CallToActionData } from "@/data/content";
 
@@ -67,7 +66,7 @@ const CallToAction = ({
                   data-aos="fade-up-sm"
                   data-aos-delay="300"
                 >
-                  <ImageFallback
+                  <img
                     src={image.src}
                     alt={image.alt}
                     width={800}
@@ -132,7 +131,7 @@ const CallToAction = ({
             {image && (
               <div className="lg:col-6 mt-8 lg:mt-0">
                 <div data-aos="fade-left" data-aos-delay="300">
-                  <ImageFallback
+                  <img
                     src={image.src}
                     alt={image.alt}
                     width={600}

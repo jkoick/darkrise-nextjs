@@ -1,5 +1,4 @@
 import AnimatedAnchor from "@/layouts/components/AnimatedAnchor";
-import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
 import { FeatureItem } from "@/data/content";
 
@@ -43,7 +42,7 @@ const Features = ({ data, title, description }: FeaturesProps) => {
                 {feature.images && feature.images.length > 0 && (
                   <div className="mb-4">
                     {feature.images.map((imageSrc, imgIndex) => (
-                      <ImageFallback
+                      <img
                         key={imgIndex}
                         src={imageSrc}
                         alt={feature.title}

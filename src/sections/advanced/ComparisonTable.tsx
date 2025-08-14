@@ -1,4 +1,3 @@
-import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
 
 interface ComparisonFeature {
@@ -33,7 +32,7 @@ const ComparisonTable = ({
   const renderValue = (value: boolean | string) => {
     if (typeof value === "boolean") {
       return value ? (
-        <ImageFallback
+        <img
           src="/images/icons/svg/check.svg"
           alt="Yes"
           width={20}
@@ -41,7 +40,7 @@ const ComparisonTable = ({
           className="text-green-400 mx-auto"
         />
       ) : (
-        <ImageFallback
+        <img
           src="/images/icons/svg/cross.svg"
           alt="No"
           width={20}
@@ -97,7 +96,7 @@ const ComparisonTable = ({
                     className="p-4 border-b border-white/10 text-center"
                   >
                     {competitor.logo ? (
-                      <ImageFallback
+                      <img
                         src={competitor.logo}
                         alt={competitor.name}
                         width={80}

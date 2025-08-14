@@ -1,7 +1,6 @@
 "use client";
 
 import AnimatedAnchor from "@/components/AnimatedAnchor";
-import ImageFallback from "@/helpers/ImageFallback";
 import { integrationContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 import { useState } from "react";
@@ -84,7 +83,7 @@ const IntegrationCardLayout = () => {
                     <div className="relative z-20">
                       <div className="mb-6 flex items-center gap-4">
                         {frontmatter.image && (
-                          <ImageFallback
+                          <img
                             className="h-[70px] w-[70px] object-cover transition duration-300 group-hover:scale-90"
                             src={frontmatter.image}
                             alt={`icon related to ${frontmatter.title}`}

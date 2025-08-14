@@ -1,4 +1,3 @@
-import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
 import React from "react";
 
@@ -21,7 +20,7 @@ const TestimonialCard = ({
     >
       {content && <div dangerouslySetInnerHTML={markdownify(content)} />}
       <div className="mt-10 flex items-center">
-        <ImageFallback
+        <img
           src={image}
           className="h-auto w-14"
           alt={name || "brand image"}

@@ -1,4 +1,3 @@
-import ImageFallback from "@/helpers/ImageFallback";
 import { customersLogoContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 
@@ -26,7 +25,7 @@ const CustomersLogo = () => {
               <div className="marquee flex shrink-0 items-center justify-center gap-x-10 gap-y-6 opacity-60 md:gap-x-20">
                 {logos?.map((logo, i: number) => (
                   <div className="h-10" key={i}>
-                    <ImageFallback
+                    <img
                       src={logo.src}
                       className="h-full object-contain"
                       alt={logo.alt}
@@ -42,7 +41,7 @@ const CustomersLogo = () => {
               >
                 {logos?.map((logo, i: number) => (
                   <div className="h-10" key={i}>
-                    <ImageFallback
+                    <img
                       src={logo.src}
                       className="h-full object-contain"
                       alt={logo.alt}

@@ -1,5 +1,4 @@
 import AnimatedAnchor from "@/components/AnimatedAnchor";
-import ImageFallback from "@/helpers/ImageFallback";
 import { callToAction1Content } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 
@@ -48,7 +47,7 @@ const CallToAction1 = () => {
                     data-aos="fade-right-sm"
                     data-aos-delay="150"
                   >
-                    <ImageFallback
+                    <img
                       className="-mb-px h-[300px] sm:h-[400px] lg:h-[450px] w-full rounded-t-xl border border-border bg-body object-cover object-center sm:object-left-top lg:ml-28 lg:rounded-3xl lg:rounded-b-none"
                       src={image.src}
                       alt={image.alt}
@@ -60,7 +59,7 @@ const CallToAction1 = () => {
               </div>
               <div aria-hidden="true">
                 <div className="bg-gradient-to-t from-black/90 via-black/30 to-transparent absolute inset-0 z-10 w-full h-full lg:bg-gradient-to-r lg:from-black/80 lg:via-transparent lg:to-transparent"></div>
-                <ImageFallback
+                <img
                   className="absolute inset-0 z-0 h-full w-full object-contain object-left-bottom"
                   src={bg_image}
                   alt="background pattern image"

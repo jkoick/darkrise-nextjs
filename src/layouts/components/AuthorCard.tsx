@@ -1,4 +1,3 @@
-import ImageFallback from "@/helpers/ImageFallback";
 
 interface AuthorCardProps {
   name?: string;
@@ -25,7 +24,7 @@ const AuthorCard = ({
     <div className="mt-16 rounded-lg border border-border bg-dark p-8">
       <div className="flex flex-col items-center text-center sm:flex-row sm:text-left">
         <div className="mb-4 sm:mb-0 sm:mr-6">
-          <ImageFallback
+          <img
             src={image}
             alt={name}
             width={100}

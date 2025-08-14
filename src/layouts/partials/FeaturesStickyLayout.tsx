@@ -1,6 +1,5 @@
 import AnimatedAnchor from "@/components/AnimatedAnchor";
 import DynamicIcon from "@/helpers/DynamicIcon";
-import ImageFallback from "@/helpers/ImageFallback";
 import { featuresContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 
@@ -90,7 +89,7 @@ const FeaturesStickyLayout = ({ sticky = true }: { sticky?: boolean }) => {
                           };
 
                           return (
-                            <ImageFallback
+                            <img
                               src={item}
                               alt={title}
                               className={`relative z-10 ${getClass(mindex, index)}`}

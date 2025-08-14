@@ -1,4 +1,3 @@
-import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const IntegrationCard = ({
@@ -14,7 +13,7 @@ const IntegrationCard = ({
     <div
       className={`w-[130px] border border-white/5 bg-dark py-6 ${(style && style) || ""} md:w-[260px]`}
     >
-      <ImageFallback
+      <img
         src={image}
         className="mx-auto h-auto w-14 md:w-16"
         alt={name || "brand image"}

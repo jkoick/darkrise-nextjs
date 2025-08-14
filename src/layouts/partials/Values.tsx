@@ -1,4 +1,3 @@
-import ImageFallback from "@/helpers/ImageFallback";
 import { valuesContent } from "@/data/content";
 import { markdownify } from "@/lib/utils/textConverter";
 
@@ -41,7 +40,7 @@ const Values = () => {
                         <div className="mb-12 flex h-14 w-14 overflow-hidden items-center justify-start rounded-lg bg-gradient-to-b from-white/10 to-slate-800/25">
                           <div className="h-14 w-14 transition duration-500 ease-out group-hover:-translate-y-full flex flex-col items-start">
                             <div className="min-w-14 flex justify-center items-center min-h-14">
-                              <ImageFallback
+                              <img
                                 className="h-7 w-7 object-cover"
                                 src={item.icon}
                                 alt={`icon related to ${item.title}`}
@@ -53,7 +52,7 @@ const Values = () => {
                               className="min-w-14 flex justify-center items-center min-h-14"
                               aria-hidden="true"
                             >
-                              <ImageFallback
+                              <img
                                 src={item.icon}
                                 className="h-7 w-7 object-cover"
                                 alt={`icon related to ${item.title}`}
