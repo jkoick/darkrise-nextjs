@@ -1,5 +1,6 @@
 import config from "@/config/config.json";
 import theme from "@/config/theme.json";
+import Hotjar from "@/helpers/Hotjar";
 import TwSizeIndicator from "@/helpers/TwSizeIndicator";
 import Footer from "@/partials/Footer";
 import Header from "@/partials/Header";
@@ -19,6 +20,9 @@ export default function RootLayout({
     <html suppressHydrationWarning={true} lang="sk">
       {config.google_tag_manager.enable && (
         <GoogleTagManager gtmId={config.google_tag_manager.gtm_id} />
+      )}
+      {config.hotjar.enable && (
+        <Hotjar siteId={config.hotjar.site_id} />
       )}
 
       <head>

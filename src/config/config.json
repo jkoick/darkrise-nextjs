@@ -43,6 +43,11 @@
     "gtm_id": "GTM-XXXXXX"
   },
 
+  "hotjar": {
+    "enable": false,
+    "site_id": "6505538"
+  },
+
   "metadata": {
     "meta_author": "Themefisher",
     "meta_image": "/images/og-image.png",
