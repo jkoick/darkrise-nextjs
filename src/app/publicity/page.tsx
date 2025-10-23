@@ -1,5 +1,4 @@
 import SeoMeta from "@/partials/SeoMeta";
-import Image from "next/image";
 
 const Publicity = () => {
   return (
@@ -18,9 +17,9 @@ const Publicity = () => {
 
                 <div className="mb-12">
                   <p className="text-lg leading-relaxed">
-                    Realizácia projektu "Analýza a návrh individualizovaného
+                    Realizácia projektu &ldquo;Analýza a návrh individualizovaného
                     riešenia digitálneho predajcu pre zvýšenie objemov predaja
-                    pomocou nástroja využívajúceho umelú inteligenciu"
+                    pomocou nástroja využívajúceho umelú inteligenciu&rdquo;
                   </p>
                   <p className="text-lg leading-relaxed mt-4">
                     Financované Európskou úniou NextGenerationEU
